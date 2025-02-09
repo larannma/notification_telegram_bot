@@ -20,11 +20,15 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
 async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await update.message.reply_text(update.message.text)
 
+async def kek(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    await update.message.reply_text("kek")
+
 def main() -> None:
     application = Application.builder().token(BOT_TOKEN).build()
 
     application.add_handler(CommandHandler("start", start))
     application.add_handler(CommandHandler("pomogi", help_command))
+    application.add_handler(CommandHandler("kek", kek))
 
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, echo))
 
