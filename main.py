@@ -21,7 +21,7 @@ async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await update.message.reply_text(update.message.text)
 
 async def kek(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    await update.message.reply_text("kek")
+    await update.message.reply_text("kek32")
 
 def main() -> None:
     application = Application.builder().token(BOT_TOKEN).build()
