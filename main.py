@@ -14,6 +14,9 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         Hellper.GREETINGS
     )
 
+async def ask_message():
+    pass
+
 def main() -> None:
     application = Application.builder().token(BOT_TOKEN).build()
 
