@@ -5,10 +5,6 @@ from dotenv import(
     load_dotenv
 )
 
-from saveToJson import (
-    write_json
-)
-
 from telegram import (
     InlineKeyboardButton, 
     InlineKeyboardMarkup, 
@@ -17,61 +13,119 @@ from telegram import (
 
 from telegram.ext import (
     Application, 
-    CallbackQueryHandler, 
+    CallbackQueryHandler,
+    ConversationHandler,
     CommandHandler, 
     ContextTypes, 
     MessageHandler, 
     filters
 )
 
+from telegram.constants import (
+    ParseMode
+)
 
 load_dotenv()
 
+#define states and bot token
+MENU, ASK_NAME, ASK_NOTIFICATION, ASK_DATE, ASK_RATE = range(5)
 BOT_TOKEN = os.getenv('BOT_TOKEN')
 
-async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    user = update.effective_user
+
+# start function
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+    userId = update.effective_user.id
+    context.user_data["userId"] = userId
+
     await update.message.reply_html(
         Constants.GREETINGS
     )
 
-#define states
-ASK_NAME, ASK_NOTIFICATION, ASK_DATE, ASK_RATE = range(5)
-
-async def Menu(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     keyboard = [
         [InlineKeyboardButton("Set Notification", callback_data="Set Notification")],
     ]
-
     reply_markup = InlineKeyboardMarkup(keyboard)
 
-    await update.message.reply_text("Please choose:", reply_markup=reply_markup)
+    await update.message.reply_text("Please choose the command:", reply_markup=reply_markup, parse_mode=ParseMode.MARKDOWN)
+    return MENU
 
-async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+# Menu function
+async def menu(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     query = update.callback_query
     await query.answer()
-
     await query.edit_message_text(text=f"Selected option: {query.data}")
 
-# --------
+    if query.data == "Set Notification":
+        await query.message.reply_text("Enter your name")
+        return ASK_NAME
+    
+    else:
+        keyboard = [
+            [InlineKeyboardButton("Set Notification", callback_data="Set Notification")],
+        ]
+        reply_markup = InlineKeyboardMarkup(keyboard)
 
-async def set_notification(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    message_text = update.message.text
-    context.user_data['name'] = message_text
+        await query.message.reply_text("Please choose the command:", reply_markup=reply_markup, parse_mode=ParseMode.MARKDOWN)
+        return MENU
+
+
+
+# "Set Notification" function
+async def ask_name(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+    name = update.message.text
+    context.user_data["name"] = name
+
+    await update.message.reply_text("Enter your notification")
+    return ASK_NOTIFICATION
+
+async def ask_notification(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+    notification = update.message.text
+    context.user_data["notification"] = notification
+
+    await update.message.reply_text("Enter your date for sending your notification")
+    return ASK_DATE
+
+async def ask_date(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+    date = update.message.text
+    context.user_data["date"] = date
+
+    await update.message.reply_text("Enter your rate of sending your notification")
+    return ASK_RATE
+
+async def ask_rate(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+    rate = update.message.text
+    context.user_data["rate"] = rate
     print(context.user_data)
 
-def main() -> None:
+    return ConversationHandler.END
 
+async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+    await update.message.reply_text("Operation cancelled.")
+    return ConversationHandler.END
+
+
+# Main function
+def main() -> None:
     application = Application.builder().token(BOT_TOKEN).build()
 
-    application.add_handler(CommandHandler("start", start))
-    application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, set_notification))
+    conv_handler = ConversationHandler(
+        entry_points=[CommandHandler("start", start)],
+        states={
+            # setup "Menu" function
+            MENU: [CallbackQueryHandler(menu)],
 
-    # Menu buttons
-    application.add_handler(CommandHandler("menu", Menu))
-    application.add_handler(CallbackQueryHandler(button))
+            # setup "Set Notification" function
+            ASK_NAME: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_name)],
+            ASK_NOTIFICATION: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_notification)],
+            ASK_DATE: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_date)],
+            ASK_RATE: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_rate)],
+        },
+        fallbacks=[CommandHandler("cancel", cancel)],
+    )
 
-    application.run_polling(allowed_updates=Update.ALL_TYPES)
+    # Start The Bot
+    application.add_handler(conv_handler)
+    application.run_polling()
 
 if __name__ == "__main__":
     main()
