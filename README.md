@@ -3,7 +3,14 @@
 The Bot powered by python
 
 ---
-## How to install
+
+## What our project is do:
+
+This bot will resand you your text/notification
+
+To start the bot write '/start' to bot
+
+## How to install:
 
 Clone the project to you computer:
 ```
