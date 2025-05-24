@@ -17,6 +17,7 @@ $ pip install -r .\requirements.txt
 ```
 
 Then create `.env` file in the project and complete him how in `.env.example`
+
 After in terminal and run the command:
 ```
 .\venv\Scripts\python.exe .\main.py
