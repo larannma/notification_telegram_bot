@@ -1,6 +1,7 @@
 import os
 import Constants
-
+from Postgres.Connection import DB
+from datetime import date
 from dotenv import(
     load_dotenv
 )
@@ -25,17 +26,17 @@ from telegram.constants import (
     ParseMode
 )
 
+db = DB()
 load_dotenv()
 
 #define states and bot token
 MENU, ASK_NAME, ASK_NOTIFICATION, ASK_DATE, ASK_RATE = range(5)
 BOT_TOKEN = os.getenv('BOT_TOKEN')
 
-
 # start function
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
-    userId = update.effective_user.id
-    context.user_data["userId"] = userId
+    tg_id = update.effective_user.id
+    context.user_data["tg_id"] = tg_id
 
     await update.message.reply_html(
         Constants.GREETINGS
@@ -69,7 +70,6 @@ async def menu(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
         return MENU
 
 
-
 # "Set Notification" function
 async def ask_name(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     name = update.message.text
@@ -80,29 +80,48 @@ async def ask_name(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
 
 async def ask_notification(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     notification = update.message.text
-    context.user_data["notification"] = notification
+    context.user_data["text"] = notification
 
-    await update.message.reply_text("Enter your date for sending your notification")
+    await update.message.reply_text("Enter your date in the type --> yyyy-MM-dd")
     return ASK_DATE
 
 async def ask_date(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
-    date = update.message.text
-    context.user_data["date"] = date
+    date_str = update.message.text
+    date_obj = date.fromisoformat(date_str)
+    context.user_data["date"] = date_obj
 
-    await update.message.reply_text("Enter your rate of sending your notification")
-    return ASK_RATE
+    temp = db.checkTGId(str(context.user_data["tg_id"]))
 
-async def ask_rate(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
-    rate = update.message.text
-    context.user_data["rate"] = rate
-    print(context.user_data)
+    if temp is not None:
+        db.insert_notification(temp, context.user_data["text"], context.user_data["date"])
 
-    return ConversationHandler.END
+    else:
+        userId = db.insert_user(context.user_data["tg_id"], context.user_data["name"])
+        db.insert_notification(userId, context.user_data["text"], context.user_data["date"])
+
+    # return to menu
+    keyboard = [
+        [InlineKeyboardButton("Set Notification", callback_data="Set Notification")],
+    ]
+    reply_markup = InlineKeyboardMarkup(keyboard)
+
+    await update.message.reply_text("Please choose the command:", reply_markup=reply_markup, parse_mode=ParseMode.MARKDOWN)
+    return MENU
+
+
+#    return ConversationHandler.END
+
+#    await update.message.reply_text("Enter your rate of sending your notification")
+#    return ASK_RATE
+
+#async def ask_rate(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+#    rate = update.message.text
+#    context.user_data["rate"] = rate
+#    return ConversationHandler.END
 
 async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     await update.message.reply_text("Operation cancelled.")
     return ConversationHandler.END
-
 
 # Main function
 def main() -> None:
@@ -118,7 +137,7 @@ def main() -> None:
             ASK_NAME: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_name)],
             ASK_NOTIFICATION: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_notification)],
             ASK_DATE: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_date)],
-            ASK_RATE: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_rate)],
+            #ASK_RATE: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_rate)],
         },
         fallbacks=[CommandHandler("cancel", cancel)],
     )
