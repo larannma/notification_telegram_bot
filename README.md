@@ -19,6 +19,7 @@ $ git clone https://github.com/larannma/notification_telegram_bot.git
 
 After that go to project directory in terminal
 Then write in the terminal:
+(You need to have: 'python 3.12' or above)
 ```
 $ pip install -r .\requirements.txt
 ```
@@ -27,5 +28,5 @@ Then create `.env` file in the project and complete him how in `.env.example`
 
 After in terminal and run the command:
 ```
-.\venv\Scripts\python.exe .\main.py
+$ .\venv\Scripts\python.exe .\main.py
 ```
