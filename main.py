@@ -1,10 +1,14 @@
-import os
 import Constants
 from Postgres.Connection import DB
+
+from pytz import utc
+from apscheduler.schedulers.background import BackgroundScheduler
+from apscheduler.triggers.interval import IntervalTrigger
+import asyncio
+
+import os
 from datetime import date
-from dotenv import(
-    load_dotenv
-)
+from dotenv import load_dotenv
 
 from telegram import (
     InlineKeyboardButton, 
@@ -22,9 +26,8 @@ from telegram.ext import (
     filters
 )
 
-from telegram.constants import (
-    ParseMode
-)
+from telegram.constants import ParseMode
+
 
 db = DB()
 load_dotenv()
@@ -109,15 +112,15 @@ async def ask_date(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     return MENU
 
 
-#    return ConversationHandler.END
 
-#    await update.message.reply_text("Enter your rate of sending your notification")
-#    return ASK_RATE
-
-#async def ask_rate(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
-#    rate = update.message.text
-#    context.user_data["rate"] = rate
-#    return ConversationHandler.END
+# Resend notifications to users
+async def sendDueNoifications(application: Application):
+    due_massages = db.getDueMessage()
+    for msg in due_massages:
+        user_id = msg["user_id"]
+        text = msg["notifications"]
+        await application.bot.send_message(chat_id=user_id, text=text)
+        db.markMessageAsSent(msg["id"])
 
 async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     await update.message.reply_text("Operation cancelled.")
@@ -125,7 +128,16 @@ async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
 
 # Main function
 def main() -> None:
-    application = Application.builder().token(BOT_TOKEN).build()
+    application = Application.builder().token(BOT_TOKEN).build()    
+
+    scheduler = BackgroundScheduler()
+    scheduler.add_job(
+        lambda: asyncio.run(sendDueNoifications(application)),
+        trigger=IntervalTrigger(minutes=1),
+        id='send_nitifications',
+        replace_existing=True
+    )
+    scheduler.start()
 
     conv_handler = ConversationHandler(
         entry_points=[CommandHandler("start", start)],
@@ -141,6 +153,7 @@ def main() -> None:
         },
         fallbacks=[CommandHandler("cancel", cancel)],
     )
+
 
     # Start The Bot
     application.add_handler(conv_handler)

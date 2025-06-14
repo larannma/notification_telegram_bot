@@ -31,7 +31,30 @@ class DB:
         return id
 
     def insert_notification(self, userId, text, date):
-        self.cur.execute("INSERT INTO notifications (user_id, text, date) VALUES (%s, %s, %s)", (userId, text, date))
+        self.cur.execute("INSERT INTO notifications (user_id, text, date, sent) VALUES (%s, %s, %s, %s)", (userId, text, date, False))
+        self.conn.commit()
+
+    def getDueMessage(self):
+        query = '''
+            SELECT id, user_id, text, date
+            FROM notifications
+            WHERE date <= NOW() AND sent = FALSE
+        '''
+        self.cur.execute(query)
+        rows = self.cur.fetchall()
+        return [
+            {
+                "id": row[0],
+                "user_id": row[1],
+                "notifications": row[2],
+                "date": row[3]
+            }
+            for row in rows
+        ]            
+
+    def markMessageAsSent(self, message_id):
+        query = "UPDATE notifications SET sent = TRUE WHERE id = %s"
+        self.cur.execute(query, (message_id,))
         self.conn.commit()
 
     def checkTGId(self, tg_id):
