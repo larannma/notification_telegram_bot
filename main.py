@@ -1,7 +1,6 @@
 # poject imports
-import Constants
-from Postgres.Connection import DB
-from Commands.SetNotification import ask_name, ask_notification, ask_date
+import Helper.Constants as Constants
+from Commands.SetNotification import Set_Notification
 
 # lib imports
 import os
@@ -24,11 +23,9 @@ from telegram.ext import (
 )
 
 from telegram.constants import ParseMode
-
-db = DB()
 load_dotenv()
 
-
+SN = Set_Notification()
 
 # define states
 MENU, ASK_NAME, ASK_NOTIFICATION, ASK_DATE, ASK_RATE = range(5)
@@ -94,9 +91,9 @@ def main() -> None:
             MENU: [CallbackQueryHandler(menu)],
 
             # setup "Set Notification" function
-            ASK_NAME: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_name)],
-            ASK_NOTIFICATION: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_notification)],
-            ASK_DATE: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_date)],
+            ASK_NAME: [MessageHandler(filters.TEXT & ~filters.COMMAND, SN.ask_name)],
+            ASK_NOTIFICATION: [MessageHandler(filters.TEXT & ~filters.COMMAND, SN.ask_notification)],
+            ASK_DATE: [MessageHandler(filters.TEXT & ~filters.COMMAND, SN.ask_date)],
         },
         fallbacks=[CommandHandler("cancel", cancel)],
     )
