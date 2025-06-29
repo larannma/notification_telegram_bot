@@ -1,16 +1,20 @@
 # poject imports
 import Helper.Constants as Constants
 from Commands.SetNotification import Set_Notification
+from Postgres.Connection import DB
 
 # lib imports
-import os
-from datetime import date
+import os, asyncio
 from dotenv import load_dotenv
+from datetime import datetime, date, time
+from apscheduler.schedulers.background import BackgroundScheduler
 
+from telegram.constants import ParseMode
 from telegram import (
     InlineKeyboardButton, 
     InlineKeyboardMarkup, 
-    Update
+    Update,
+    Bot
 )
 from telegram.ext import (
     Application, 
@@ -22,15 +26,15 @@ from telegram.ext import (
     filters
 )
 
-from telegram.constants import ParseMode
-load_dotenv()
 
+load_dotenv()
 SN = Set_Notification()
+db = DB()
 
 # define states
 MENU, ASK_NAME, ASK_NOTIFICATION, ASK_DATE, ASK_RATE = range(5)
 BOT_TOKEN = os.getenv('BOT_TOKEN')
-
+bot = Bot(token=BOT_TOKEN)
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     tg_id = update.effective_user.id
@@ -75,13 +79,31 @@ async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     return ConversationHandler.END
 
 
+async def privet():
+    a = db.getMessages()
+    b = db.getUser(a[0]['user_id'])
+    print("rr")
+    await bot.send_message(chat_id=993700847, text="kek")
+
+    print(b[0][0])
 
 
-
+def wrapper():
+    loop = asyncio.get_event_loop()
+    loop.create_task(privet())
 
 # Main function
 def main() -> None:
-    application = Application.builder().token(BOT_TOKEN).build()    
+    application = Application.builder().token(BOT_TOKEN).build()
+
+
+    scheduler = BackgroundScheduler()
+    scheduler.add_job(
+        wrapper,
+        'interval',
+        seconds=5
+    )
+    scheduler.start()
 
 
     conv_handler = ConversationHandler(

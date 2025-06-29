@@ -34,9 +34,9 @@ class DB:
         self.cur.execute("INSERT INTO notifications (user_id, text, date, sent) VALUES (%s, %s, %s, %s)", (userId, text, date, False))
         self.conn.commit()
 
-    def getDueMessage(self):
+    def getMessages(self):
         query = '''
-            SELECT id, user_id, text, date
+            SELECT id, user_id, text, date, sent
             FROM notifications
             WHERE date <= NOW() AND sent = FALSE
         '''
@@ -47,10 +47,21 @@ class DB:
                 "id": row[0],
                 "user_id": row[1],
                 "notifications": row[2],
-                "date": row[3]
+                "date": row[3],
+                "sent": row[4]
             }
             for row in rows
-        ]            
+        ]
+    
+    def getUser(self, id):
+        query = '''
+            SELECT tg_id
+            FROM users
+            WHERE id = %s
+        '''
+        self.cur.execute(query, (id,))
+        tg_id = self.cur.fetchall()
+        return tg_id
 
     def markMessageAsSent(self, message_id):
         query = "UPDATE notifications SET sent = TRUE WHERE id = %s"
