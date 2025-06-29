@@ -79,29 +79,32 @@ async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     return ConversationHandler.END
 
 
-async def privet():
+async def sent_notiofication():
     a = db.getMessages()
-    b = db.getUser(a[0]['user_id'])
-    print("rr")
-    await bot.send_message(chat_id=993700847, text="kek")
+    
+    for i in range(len(a)):
+        b = db.getUser(a[i]['user_id'])
+        await bot.send_message(chat_id=int(b[0][0]), text=a[i]['text'])
+
+        db.markMessageAsSent(a[i]['id'])
 
     print(b[0][0])
 
 
-def wrapper():
-    loop = asyncio.get_event_loop()
-    loop.create_task(privet())
-
 # Main function
 def main() -> None:
     application = Application.builder().token(BOT_TOKEN).build()
+    loop = asyncio.get_event_loop()
 
+    def wrapper():
+        loop.create_task(sent_notiofication())
 
     scheduler = BackgroundScheduler()
     scheduler.add_job(
         wrapper,
         'interval',
-        seconds=5
+        seconds=5,
+        max_instances=1
     )
     scheduler.start()
 

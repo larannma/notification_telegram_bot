@@ -46,7 +46,7 @@ class DB:
             {
                 "id": row[0],
                 "user_id": row[1],
-                "notifications": row[2],
+                "text": row[2],
                 "date": row[3],
                 "sent": row[4]
             }
