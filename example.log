@@ -1,0 +1,406 @@
+DEBUG:asyncio:Using proactor: IocpProactor
+DEBUG:tzlocal:Looking up time zone info from registry
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "main.<locals>.<lambda>" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2025-07-05 20:23:49.066651+03:00 (in 4.998401 seconds)
+DEBUG:telegram.ext.ExtBot:Calling Bot API endpoint `getMe` with parameters `{}`
+DEBUG:httpcore.connection:connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG:httpcore.connection:connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000020D7A265A90>
+DEBUG:httpcore.connection:start_tls.started ssl_context=<ssl.SSLContext object at 0x0000020D7A1D7260> server_hostname='api.telegram.org' timeout=5.0
+DEBUG:httpcore.connection:start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000020D7A24B610>
+DEBUG:httpcore.http11:send_request_headers.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:send_request_headers.complete
+DEBUG:httpcore.http11:send_request_body.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:send_request_body.complete
+DEBUG:httpcore.http11:receive_response_headers.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Sat, 05 Jul 2025 17:23:43 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'270'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getMe "HTTP/1.1 200 OK"
+DEBUG:httpcore.http11:receive_response_body.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:receive_response_body.complete
+DEBUG:httpcore.http11:response_closed.started
+DEBUG:httpcore.http11:response_closed.complete
+DEBUG:telegram.ext.ExtBot:Call to Bot API endpoint `getMe` finished with return value `{'id': 8168154252, 'is_bot': True, 'first_name': 'notification', 'username': 'donotforget_notification_bot', 'can_join_groups': True, 'can_read_all_group_messages': False, 'supports_inline_queries': False, 'can_connect_to_business': False, 'has_main_web_app': False}`
+DEBUG:telegram.ext.ExtBot:This Bot is already initialized.
+DEBUG:telegram.ext.Updater:Updater started (polling)
+DEBUG:telegram.ext.Updater:Start network loop retry bootstrap del webhook
+DEBUG:telegram.ext.Updater:Deleting webhook
+DEBUG:telegram.ext.ExtBot:Calling Bot API endpoint `deleteWebhook` with parameters `{}`
+DEBUG:httpcore.http11:send_request_headers.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:send_request_headers.complete
+DEBUG:httpcore.http11:send_request_body.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:send_request_body.complete
+DEBUG:httpcore.http11:receive_response_headers.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Sat, 05 Jul 2025 17:23:43 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'68'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/deleteWebhook "HTTP/1.1 200 OK"
+DEBUG:httpcore.http11:receive_response_body.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:receive_response_body.complete
+DEBUG:httpcore.http11:response_closed.started
+DEBUG:httpcore.http11:response_closed.complete
+DEBUG:telegram.ext.ExtBot:Call to Bot API endpoint `deleteWebhook` finished with return value `True`
+DEBUG:telegram.ext.Updater:Bootstrap done
+DEBUG:telegram.ext.Updater:Waiting for polling to start
+DEBUG:telegram.ext.Updater:Polling updates from Telegram started
+DEBUG:telegram.ext.Updater:Start network loop retry getting Updates
+DEBUG:telegram.ext.ExtBot:Calling Bot API endpoint `getUpdates` with parameters `{'timeout': 10, 'offset': 0}`
+INFO:apscheduler.scheduler:Scheduler started
+DEBUG:telegram.ext.Application:JobQueue started
+INFO:telegram.ext.Application:Application started
+DEBUG:httpcore.connection:connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:No jobs; waiting until a job is added
+DEBUG:httpcore.connection:connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000020D7A2C5D10>
+DEBUG:httpcore.connection:start_tls.started ssl_context=<ssl.SSLContext object at 0x0000020D7A1D72F0> server_hostname='api.telegram.org' timeout=5.0
+DEBUG:httpcore.connection:start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000020D7A20BBB0>
+DEBUG:httpcore.http11:send_request_headers.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:send_request_headers.complete
+DEBUG:httpcore.http11:send_request_body.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:send_request_body.complete
+DEBUG:httpcore.http11:receive_response_headers.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Sat, 05 Jul 2025 17:23:44 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'8932'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+DEBUG:httpcore.http11:receive_response_body.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:receive_response_body.complete
+DEBUG:httpcore.http11:response_closed.started
+DEBUG:httpcore.http11:response_closed.complete
+DEBUG:telegram.ext.ExtBot:Call to Bot API endpoint `getUpdates` finished with return value `[{'update_id': 400629784, 'message': {'message_id': 953, 'from': {'id': 993700847, 'is_bot': False, 'first_name': 'Арсений', 'last_name': 'Кьпе', 'username': 'luigofull441', 'language_code': 'en'}, 'chat': {'id': 993700847, 'first_name': 'Арсений', 'last_name': 'Кьпе', 'username': 'luigofull441', 'type': 'private'}, 'date': 1751735806, 'text': 'D:\\Programing\\notification_telegram_bot\\main.py:116: PTBUserWarning: If \'per_message=True\', all entry points, state handlers, and fallbacks must be \'CallbackQueryHandler\', since no other handlers have a message context. Read this FAQ entry to learn more about the per_* settings: https://github.com/python-telegram-bot/python-telegram-bot/wiki/Frequently-Asked-Questions#what-do-the-per_-settings-in-conversationhandler-do.\n  conv_handler = ConversationHandler(\nTraceback (most recent call last):\n  File "C:\\Users\\luigodull\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\telegram\\ext\\_application.py", line 1069, in __run\n    loop.run_until_complete(self.initialize())\n    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^\n  File "C:\\Users\\luigodull\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\asyncio\\base_events.py", line 701, in run_until_complete\n    self._check_running()\n    ~~~~~~~~~~~~~~~~~~~^^\n  File "C:\\Users\\luigodull\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\asyncio\\base_events.py", line 637, in _check_running\n    raise RuntimeError(\'This event loop is already running\')\nRuntimeError: This event loop is already running\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File "C:\\Users\\luigodull\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\telegram\\ext\\_application.py", line 1094, in __run\n    loop.run_until_complete(self.shutdown())\n    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File "C:\\Users\\luigodull\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\asyncio\\base_events.py", line 701, in run_until_complete\n    self._check_running()\n    ~~~~~~~~~~~~~~~~~~~^^\n  File "C:\\Users\\luigodull\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\asyncio\\base_events.py", line 637, in _check_running\n    raise RuntimeError(\'This event loop is already running\')\nRuntimeError: This event loop is already running\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File "D:\\Programing\\notification_telegram_bot\\main.py", line 132, in <module>\n    asyncio.run(main())\n    ~~~~~~~~~~~^^^^^^^^\n  File "C:\\Users\\luigodull\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\asyncio\\runners.py", line 195, in run\n    return runner.run(main)\n           ~~~~~~~~^^^^^^\n  File "C:\\Users\\luigodull\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\asyncio\\runners.py", line 118, in run\n    return self._loop.run_until_complete(task)\n           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^\n  File "C:\\Users\\luigodull\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\asyncio\\base_events.py", line 725, in run_until_complete\n    return future.result()\n           ~~~~~~~~~~~~~^^\n  File "D:\\Programing\\notification_telegram_bot\\main.py", line 129, in main\n    await application.run_polling()\n          ~~~~~~~~~~~~~~~~~~~~~~~^^\n  File "C:\\Users\\luigodull\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\telegram\\ext\\_application.py", line 868, in run_polling\n    return self.__run(\n           ~~~~~~~~^\n        updater_coroutine=self.updater.start_polling(\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<12 lines>...\n        stop_signals=stop_signals,\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File "C:\\Users\\luigodull\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\telegram\\ext\\_application.py", line 1099, in __run\n    loop.close()\n    ~~~~~~~~^^\n  File "C:\\Users\\luigodull\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\asyncio\\proactor_events.py", line 684, in close\n    raise RuntimeError("Cannot close a running event loop")\nRuntimeError: Cannot close a running event loop\n<sys>:0: RuntimeWarning: coroutine \'Application.shutdown\' was never awaited\n<sys>:0: RuntimeWarning: coroutine \'Application.initialize\' was never awaited', 'entities': [{'offset': 40, 'length': 11, 'type': 'url'}, {'offset': 280, 'length': 142, 'type': 'url'}, {'offset': 2039, 'length': 7, 'type': 'url'}, {'offset': 2075, 'length': 11, 'type': 'url'}, {'offset': 2198, 'length': 10, 'type': 'url'}, {'offset': 2239, 'length': 10, 'type': 'url'}, {'offset': 2275, 'length': 86, 'type': 'strikethrough'}, {'offset': 2361, 'length': 10, 'type': 'url'}, {'offset': 2361, 'length': 10, 'type': 'strikethrough'}, {'offset': 2371, 'length': 78, 'type': 'strikethrough'}, {'offset': 2713, 'length': 7, 'type': 'url'}, {'offset': 2996, 'length': 370, 'type': 'strikethrough'}], 'link_preview_options': {'url': 'https://github.com/python-telegram-bot/python-telegram-bot/wiki/Frequently-Asked-Questions'}}}, {'update_id': 400629785, 'message': {'message_id': 954, 'from': {'id': 1899008325, 'is_bot': False, 'first_name': 'Anna', 'last_name': 'Larionova', 'username': 'MilkyHawk', 'language_code': 'en'}, 'chat': {'id': 1899008325, 'first_name': 'Anna', 'last_name': 'Larionova', 'username': 'MilkyHawk', 'type': 'private'}, 'date': 1751735825, 'text': '/start', 'entities': [{'offset': 0, 'length': 6, 'type': 'bot_command'}]}}, {'update_id': 400629786, 'message': {'message_id': 955, 'from': {'id': 1899008325, 'is_bot': False, 'first_name': 'Anna', 'last_name': 'Larionova', 'username': 'MilkyHawk', 'language_code': 'en'}, 'chat': {'id': 1899008325, 'first_name': 'Anna', 'last_name': 'Larionova', 'username': 'MilkyHawk', 'type': 'private'}, 'date': 1751735825, 'text': '/start', 'entities': [{'offset': 0, 'length': 6, 'type': 'bot_command'}]}}, {'update_id': 400629787, 'message': {'message_id': 956, 'from': {'id': 1899008325, 'is_bot': False, 'first_name': 'Anna', 'last_name': 'Larionova', 'username': 'MilkyHawk', 'language_code': 'en'}, 'chat': {'id': 1899008325, 'first_name': 'Anna', 'last_name': 'Larionova', 'username': 'MilkyHawk', 'type': 'private'}, 'date': 1751735825, 'text': '/start', 'entities': [{'offset': 0, 'length': 6, 'type': 'bot_command'}]}}, {'update_id': 400629788, 'message': {'message_id': 957, 'from': {'id': 1899008325, 'is_bot': False, 'first_name': 'Anna', 'last_name': 'Larionova', 'username': 'MilkyHawk', 'language_code': 'en'}, 'chat': {'id': 1899008325, 'first_name': 'Anna', 'last_name': 'Larionova', 'username': 'MilkyHawk', 'type': 'private'}, 'date': 1751735825, 'text': '/start', 'entities': [{'offset': 0, 'length': 6, 'type': 'bot_command'}]}}, {'update_id': 400629789, 'message': {'message_id': 958, 'from': {'id': 1899008325, 'is_bot': False, 'first_name': 'Anna', 'last_name': 'Larionova', 'username': 'MilkyHawk', 'language_code': 'en'}, 'chat': {'id': 1899008325, 'first_name': 'Anna', 'last_name': 'Larionova', 'username': 'MilkyHawk', 'type': 'private'}, 'date': 1751735825, 'text': '/start', 'entities': [{'offset': 0, 'length': 6, 'type': 'bot_command'}]}}, {'update_id': 400629790, 'message': {'message_id': 959, 'from': {'id': 1899008325, 'is_bot': False, 'first_name': 'Anna', 'last_name': 'Larionova', 'username': 'MilkyHawk', 'language_code': 'en'}, 'chat': {'id': 1899008325, 'first_name': 'Anna', 'last_name': 'Larionova', 'username': 'MilkyHawk', 'type': 'private'}, 'date': 1751735825, 'text': '/start', 'entities': [{'offset': 0, 'length': 6, 'type': 'bot_command'}]}}, {'update_id': 400629791, 'message': {'message_id': 960, 'from': {'id': 1899008325, 'is_bot': False, 'first_name': 'Anna', 'last_name': 'Larionova', 'username': 'MilkyHawk', 'language_code': 'en'}, 'chat': {'id': 1899008325, 'first_name': 'Anna', 'last_name': 'Larionova', 'username': 'MilkyHawk', 'type': 'private'}, 'date': 1751735825, 'text': '/start', 'entities': [{'offset': 0, 'length': 6, 'type': 'bot_command'}]}}, {'update_id': 400629792, 'message': {'message_id': 961, 'from': {'id': 1899008325, 'is_bot': False, 'first_name': 'Anna', 'last_name': 'Larionova', 'username': 'MilkyHawk', 'language_code': 'en'}, 'chat': {'id': 1899008325, 'first_name': 'Anna', 'last_name': 'Larionova', 'username': 'MilkyHawk', 'type': 'private'}, 'date': 1751735825, 'text': '/start', 'entities': [{'offset': 0, 'length': 6, 'type': 'bot_command'}]}}, {'update_id': 400629793, 'message': {'message_id': 962, 'from': {'id': 1899008325, 'is_bot': False, 'first_name': 'Anna', 'last_name': 'Larionova', 'username': 'MilkyHawk', 'language_code': 'en'}, 'chat': {'id': 1899008325, 'first_name': 'Anna', 'last_name': 'Larionova', 'username': 'MilkyHawk', 'type': 'private'}, 'date': 1751735825, 'text': '/start', 'entities': [{'offset': 0, 'length': 6, 'type': 'bot_command'}]}}, {'update_id': 400629794, 'message': {'message_id': 963, 'from': {'id': 1899008325, 'is_bot': False, 'first_name': 'Anna', 'last_name': 'Larionova', 'username': 'MilkyHawk', 'language_code': 'en'}, 'chat': {'id': 1899008325, 'first_name': 'Anna', 'last_name': 'Larionova', 'username': 'MilkyHawk', 'type': 'private'}, 'date': 1751735825, 'text': '/start', 'entities': [{'offset': 0, 'length': 6, 'type': 'bot_command'}]}}]`
+DEBUG:telegram.ext.ExtBot:Getting updates: [400629784, 400629785, 400629786, 400629787, 400629788, 400629789, 400629790, 400629791, 400629792, 400629793, 400629794]
+DEBUG:telegram.ext.Application:Processing update Update(message=Message(channel_chat_created=False, chat=Chat(first_name='Арсений', id=993700847, last_name='Кьпе', type=<ChatType.PRIVATE>, username='luigofull441'), date=datetime.datetime(2025, 7, 5, 17, 16, 46, tzinfo=datetime.timezone.utc), delete_chat_photo=False, entities=(MessageEntity(length=11, offset=40, type=<MessageEntityType.URL>), MessageEntity(length=142, offset=280, type=<MessageEntityType.URL>), MessageEntity(length=7, offset=2039, type=<MessageEntityType.URL>), MessageEntity(length=11, offset=2075, type=<MessageEntityType.URL>), MessageEntity(length=10, offset=2198, type=<MessageEntityType.URL>), MessageEntity(length=10, offset=2239, type=<MessageEntityType.URL>), MessageEntity(length=86, offset=2275, type=<MessageEntityType.STRIKETHROUGH>), MessageEntity(length=10, offset=2361, type=<MessageEntityType.URL>), MessageEntity(length=10, offset=2361, type=<MessageEntityType.STRIKETHROUGH>), MessageEntity(length=78, offset=2371, type=<MessageEntityType.STRIKETHROUGH>), MessageEntity(length=7, offset=2713, type=<MessageEntityType.URL>), MessageEntity(length=370, offset=2996, type=<MessageEntityType.STRIKETHROUGH>)), from_user=User(first_name='Арсений', id=993700847, is_bot=False, language_code='en', last_name='Кьпе', username='luigofull441'), group_chat_created=False, link_preview_options=LinkPreviewOptions(url='https://github.com/python-telegram-bot/python-telegram-bot/wiki/Frequently-Asked-Questions'), message_id=953, supergroup_chat_created=False, text='D:\\Programing\\notification_telegram_bot\\main.py:116: PTBUserWarning: If \'per_message=True\', all entry points, state handlers, and fallbacks must be \'CallbackQueryHandler\', since no other handlers have a message context. Read this FAQ entry to learn more about the per_* settings: https://github.com/python-telegram-bot/python-telegram-bot/wiki/Frequently-Asked-Questions#what-do-the-per_-settings-in-conversationhandler-do.\n  conv_handler = ConversationHandler(\nTraceback (most recent call last):\n  File "C:\\Users\\luigodull\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\telegram\\ext\\_application.py", line 1069, in __run\n    loop.run_until_complete(self.initialize())\n    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^\n  File "C:\\Users\\luigodull\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\asyncio\\base_events.py", line 701, in run_until_complete\n    self._check_running()\n    ~~~~~~~~~~~~~~~~~~~^^\n  File "C:\\Users\\luigodull\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\asyncio\\base_events.py", line 637, in _check_running\n    raise RuntimeError(\'This event loop is already running\')\nRuntimeError: This event loop is already running\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File "C:\\Users\\luigodull\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\telegram\\ext\\_application.py", line 1094, in __run\n    loop.run_until_complete(self.shutdown())\n    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File "C:\\Users\\luigodull\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\asyncio\\base_events.py", line 701, in run_until_complete\n    self._check_running()\n    ~~~~~~~~~~~~~~~~~~~^^\n  File "C:\\Users\\luigodull\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\asyncio\\base_events.py", line 637, in _check_running\n    raise RuntimeError(\'This event loop is already running\')\nRuntimeError: This event loop is already running\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File "D:\\Programing\\notification_telegram_bot\\main.py", line 132, in <module>\n    asyncio.run(main())\n    ~~~~~~~~~~~^^^^^^^^\n  File "C:\\Users\\luigodull\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\asyncio\\runners.py", line 195, in run\n    return runner.run(main)\n           ~~~~~~~~^^^^^^\n  File "C:\\Users\\luigodull\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\asyncio\\runners.py", line 118, in run\n    return self._loop.run_until_complete(task)\n           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^\n  File "C:\\Users\\luigodull\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\asyncio\\base_events.py", line 725, in run_until_complete\n    return future.result()\n           ~~~~~~~~~~~~~^^\n  File "D:\\Programing\\notification_telegram_bot\\main.py", line 129, in main\n    await application.run_polling()\n          ~~~~~~~~~~~~~~~~~~~~~~~^^\n  File "C:\\Users\\luigodull\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\telegram\\ext\\_application.py", line 868, in run_polling\n    return self.__run(\n           ~~~~~~~~^\n        updater_coroutine=self.updater.start_polling(\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<12 lines>...\n        stop_signals=stop_signals,\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File "C:\\Users\\luigodull\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\telegram\\ext\\_application.py", line 1099, in __run\n    loop.close()\n    ~~~~~~~~^^\n  File "C:\\Users\\luigodull\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\asyncio\\proactor_events.py", line 684, in close\n    raise RuntimeError("Cannot close a running event loop")\nRuntimeError: Cannot close a running event loop\n<sys>:0: RuntimeWarning: coroutine \'Application.shutdown\' was never awaited\n<sys>:0: RuntimeWarning: coroutine \'Application.initialize\' was never awaited'), update_id=400629784)
+DEBUG:telegram.ext.Application:Processing update Update(message=Message(channel_chat_created=False, chat=Chat(first_name='Anna', id=1899008325, last_name='Larionova', type=<ChatType.PRIVATE>, username='MilkyHawk'), date=datetime.datetime(2025, 7, 5, 17, 17, 5, tzinfo=datetime.timezone.utc), delete_chat_photo=False, entities=(MessageEntity(length=6, offset=0, type=<MessageEntityType.BOT_COMMAND>),), from_user=User(first_name='Anna', id=1899008325, is_bot=False, language_code='en', last_name='Larionova', username='MilkyHawk'), group_chat_created=False, message_id=954, supergroup_chat_created=False, text='/start'), update_id=400629785)
+DEBUG:telegram.ext.Application:Processing update Update(message=Message(channel_chat_created=False, chat=Chat(first_name='Anna', id=1899008325, last_name='Larionova', type=<ChatType.PRIVATE>, username='MilkyHawk'), date=datetime.datetime(2025, 7, 5, 17, 17, 5, tzinfo=datetime.timezone.utc), delete_chat_photo=False, entities=(MessageEntity(length=6, offset=0, type=<MessageEntityType.BOT_COMMAND>),), from_user=User(first_name='Anna', id=1899008325, is_bot=False, language_code='en', last_name='Larionova', username='MilkyHawk'), group_chat_created=False, message_id=955, supergroup_chat_created=False, text='/start'), update_id=400629786)
+DEBUG:telegram.ext.Application:Processing update Update(message=Message(channel_chat_created=False, chat=Chat(first_name='Anna', id=1899008325, last_name='Larionova', type=<ChatType.PRIVATE>, username='MilkyHawk'), date=datetime.datetime(2025, 7, 5, 17, 17, 5, tzinfo=datetime.timezone.utc), delete_chat_photo=False, entities=(MessageEntity(length=6, offset=0, type=<MessageEntityType.BOT_COMMAND>),), from_user=User(first_name='Anna', id=1899008325, is_bot=False, language_code='en', last_name='Larionova', username='MilkyHawk'), group_chat_created=False, message_id=956, supergroup_chat_created=False, text='/start'), update_id=400629787)
+DEBUG:telegram.ext.Application:Processing update Update(message=Message(channel_chat_created=False, chat=Chat(first_name='Anna', id=1899008325, last_name='Larionova', type=<ChatType.PRIVATE>, username='MilkyHawk'), date=datetime.datetime(2025, 7, 5, 17, 17, 5, tzinfo=datetime.timezone.utc), delete_chat_photo=False, entities=(MessageEntity(length=6, offset=0, type=<MessageEntityType.BOT_COMMAND>),), from_user=User(first_name='Anna', id=1899008325, is_bot=False, language_code='en', last_name='Larionova', username='MilkyHawk'), group_chat_created=False, message_id=957, supergroup_chat_created=False, text='/start'), update_id=400629788)
+DEBUG:telegram.ext.Application:Processing update Update(message=Message(channel_chat_created=False, chat=Chat(first_name='Anna', id=1899008325, last_name='Larionova', type=<ChatType.PRIVATE>, username='MilkyHawk'), date=datetime.datetime(2025, 7, 5, 17, 17, 5, tzinfo=datetime.timezone.utc), delete_chat_photo=False, entities=(MessageEntity(length=6, offset=0, type=<MessageEntityType.BOT_COMMAND>),), from_user=User(first_name='Anna', id=1899008325, is_bot=False, language_code='en', last_name='Larionova', username='MilkyHawk'), group_chat_created=False, message_id=958, supergroup_chat_created=False, text='/start'), update_id=400629789)
+DEBUG:telegram.ext.Application:Processing update Update(message=Message(channel_chat_created=False, chat=Chat(first_name='Anna', id=1899008325, last_name='Larionova', type=<ChatType.PRIVATE>, username='MilkyHawk'), date=datetime.datetime(2025, 7, 5, 17, 17, 5, tzinfo=datetime.timezone.utc), delete_chat_photo=False, entities=(MessageEntity(length=6, offset=0, type=<MessageEntityType.BOT_COMMAND>),), from_user=User(first_name='Anna', id=1899008325, is_bot=False, language_code='en', last_name='Larionova', username='MilkyHawk'), group_chat_created=False, message_id=959, supergroup_chat_created=False, text='/start'), update_id=400629790)
+DEBUG:telegram.ext.Application:Processing update Update(message=Message(channel_chat_created=False, chat=Chat(first_name='Anna', id=1899008325, last_name='Larionova', type=<ChatType.PRIVATE>, username='MilkyHawk'), date=datetime.datetime(2025, 7, 5, 17, 17, 5, tzinfo=datetime.timezone.utc), delete_chat_photo=False, entities=(MessageEntity(length=6, offset=0, type=<MessageEntityType.BOT_COMMAND>),), from_user=User(first_name='Anna', id=1899008325, is_bot=False, language_code='en', last_name='Larionova', username='MilkyHawk'), group_chat_created=False, message_id=960, supergroup_chat_created=False, text='/start'), update_id=400629791)
+DEBUG:telegram.ext.Application:Processing update Update(message=Message(channel_chat_created=False, chat=Chat(first_name='Anna', id=1899008325, last_name='Larionova', type=<ChatType.PRIVATE>, username='MilkyHawk'), date=datetime.datetime(2025, 7, 5, 17, 17, 5, tzinfo=datetime.timezone.utc), delete_chat_photo=False, entities=(MessageEntity(length=6, offset=0, type=<MessageEntityType.BOT_COMMAND>),), from_user=User(first_name='Anna', id=1899008325, is_bot=False, language_code='en', last_name='Larionova', username='MilkyHawk'), group_chat_created=False, message_id=961, supergroup_chat_created=False, text='/start'), update_id=400629792)
+DEBUG:telegram.ext.Application:Processing update Update(message=Message(channel_chat_created=False, chat=Chat(first_name='Anna', id=1899008325, last_name='Larionova', type=<ChatType.PRIVATE>, username='MilkyHawk'), date=datetime.datetime(2025, 7, 5, 17, 17, 5, tzinfo=datetime.timezone.utc), delete_chat_photo=False, entities=(MessageEntity(length=6, offset=0, type=<MessageEntityType.BOT_COMMAND>),), from_user=User(first_name='Anna', id=1899008325, is_bot=False, language_code='en', last_name='Larionova', username='MilkyHawk'), group_chat_created=False, message_id=962, supergroup_chat_created=False, text='/start'), update_id=400629793)
+DEBUG:telegram.ext.Application:Processing update Update(message=Message(channel_chat_created=False, chat=Chat(first_name='Anna', id=1899008325, last_name='Larionova', type=<ChatType.PRIVATE>, username='MilkyHawk'), date=datetime.datetime(2025, 7, 5, 17, 17, 5, tzinfo=datetime.timezone.utc), delete_chat_photo=False, entities=(MessageEntity(length=6, offset=0, type=<MessageEntityType.BOT_COMMAND>),), from_user=User(first_name='Anna', id=1899008325, is_bot=False, language_code='en', last_name='Larionova', username='MilkyHawk'), group_chat_created=False, message_id=963, supergroup_chat_created=False, text='/start'), update_id=400629794)
+DEBUG:telegram.ext.ExtBot:Calling Bot API endpoint `getUpdates` with parameters `{'timeout': 10, 'offset': 400629795}`
+DEBUG:httpcore.http11:send_request_headers.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:send_request_headers.complete
+DEBUG:httpcore.http11:send_request_body.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:send_request_body.complete
+DEBUG:httpcore.http11:receive_response_headers.started request=<Request [b'POST']>
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:23:49 IDT)" (scheduled at 2025-07-05 20:23:49.066651+03:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2025-07-05 20:23:54.066651+03:00 (in 4.991686 seconds)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:23:54 IDT)" executed successfully
+DEBUG:Helper.logger:[]
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2025-07-05 20:23:59.066651+03:00 (in 4.989264 seconds)
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:23:59 IDT)" (scheduled at 2025-07-05 20:23:54.066651+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:23:59 IDT)" executed successfully
+DEBUG:Helper.logger:[]
+DEBUG:httpcore.http11:receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Sat, 05 Jul 2025 17:23:54 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'23'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+DEBUG:httpcore.http11:receive_response_body.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:receive_response_body.complete
+DEBUG:httpcore.http11:response_closed.started
+DEBUG:httpcore.http11:response_closed.complete
+DEBUG:telegram.ext.ExtBot:Call to Bot API endpoint `getUpdates` finished with return value `[]`
+DEBUG:telegram.ext.ExtBot:No new updates found.
+DEBUG:telegram.ext.ExtBot:Calling Bot API endpoint `getUpdates` with parameters `{'timeout': 10, 'offset': 400629795}`
+DEBUG:httpcore.http11:send_request_headers.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:send_request_headers.complete
+DEBUG:httpcore.http11:send_request_body.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:send_request_body.complete
+DEBUG:httpcore.http11:receive_response_headers.started request=<Request [b'POST']>
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2025-07-05 20:24:04.066651+03:00 (in 4.986634 seconds)
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:24:04 IDT)" (scheduled at 2025-07-05 20:23:59.066651+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:24:04 IDT)" executed successfully
+DEBUG:Helper.logger:[]
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2025-07-05 20:24:09.066651+03:00 (in 4.998867 seconds)
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:24:09 IDT)" (scheduled at 2025-07-05 20:24:04.066651+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:24:09 IDT)" executed successfully
+DEBUG:Helper.logger:[]
+DEBUG:httpcore.http11:receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Sat, 05 Jul 2025 17:24:04 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'23'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+DEBUG:httpcore.http11:receive_response_body.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:receive_response_body.complete
+DEBUG:httpcore.http11:response_closed.started
+DEBUG:httpcore.http11:response_closed.complete
+DEBUG:telegram.ext.ExtBot:Call to Bot API endpoint `getUpdates` finished with return value `[]`
+DEBUG:telegram.ext.ExtBot:No new updates found.
+DEBUG:telegram.ext.ExtBot:Calling Bot API endpoint `getUpdates` with parameters `{'timeout': 10, 'offset': 400629795}`
+DEBUG:httpcore.http11:send_request_headers.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:send_request_headers.complete
+DEBUG:httpcore.http11:send_request_body.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:send_request_body.complete
+DEBUG:httpcore.http11:receive_response_headers.started request=<Request [b'POST']>
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2025-07-05 20:24:14.066651+03:00 (in 4.994359 seconds)
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:24:14 IDT)" (scheduled at 2025-07-05 20:24:09.066651+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:24:14 IDT)" executed successfully
+DEBUG:Helper.logger:[]
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2025-07-05 20:24:19.066651+03:00 (in 4.986376 seconds)
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:24:19 IDT)" (scheduled at 2025-07-05 20:24:14.066651+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:24:19 IDT)" executed successfully
+DEBUG:Helper.logger:[]
+DEBUG:httpcore.http11:receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Sat, 05 Jul 2025 17:24:14 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'23'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+DEBUG:httpcore.http11:receive_response_body.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:receive_response_body.complete
+DEBUG:httpcore.http11:response_closed.started
+DEBUG:httpcore.http11:response_closed.complete
+DEBUG:telegram.ext.ExtBot:Call to Bot API endpoint `getUpdates` finished with return value `[]`
+DEBUG:telegram.ext.ExtBot:No new updates found.
+DEBUG:telegram.ext.ExtBot:Calling Bot API endpoint `getUpdates` with parameters `{'timeout': 10, 'offset': 400629795}`
+DEBUG:httpcore.http11:send_request_headers.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:send_request_headers.complete
+DEBUG:httpcore.http11:send_request_body.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:send_request_body.complete
+DEBUG:httpcore.http11:receive_response_headers.started request=<Request [b'POST']>
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2025-07-05 20:24:24.066651+03:00 (in 4.994381 seconds)
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:24:24 IDT)" (scheduled at 2025-07-05 20:24:19.066651+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:24:24 IDT)" executed successfully
+DEBUG:Helper.logger:[]
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2025-07-05 20:24:29.066651+03:00 (in 4.989173 seconds)
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:24:29 IDT)" (scheduled at 2025-07-05 20:24:24.066651+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:24:29 IDT)" executed successfully
+DEBUG:Helper.logger:[]
+DEBUG:httpcore.http11:receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Sat, 05 Jul 2025 17:24:24 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'23'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+DEBUG:httpcore.http11:receive_response_body.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:receive_response_body.complete
+DEBUG:httpcore.http11:response_closed.started
+DEBUG:httpcore.http11:response_closed.complete
+DEBUG:telegram.ext.ExtBot:Call to Bot API endpoint `getUpdates` finished with return value `[]`
+DEBUG:telegram.ext.ExtBot:No new updates found.
+DEBUG:telegram.ext.ExtBot:Calling Bot API endpoint `getUpdates` with parameters `{'timeout': 10, 'offset': 400629795}`
+DEBUG:httpcore.http11:send_request_headers.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:send_request_headers.complete
+DEBUG:httpcore.http11:send_request_body.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:send_request_body.complete
+DEBUG:httpcore.http11:receive_response_headers.started request=<Request [b'POST']>
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2025-07-05 20:24:34.066651+03:00 (in 4.995244 seconds)
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:24:34 IDT)" (scheduled at 2025-07-05 20:24:29.066651+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:24:34 IDT)" executed successfully
+DEBUG:Helper.logger:[]
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2025-07-05 20:24:39.066651+03:00 (in 4.986376 seconds)
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:24:39 IDT)" (scheduled at 2025-07-05 20:24:34.066651+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:24:39 IDT)" executed successfully
+DEBUG:Helper.logger:[]
+DEBUG:httpcore.http11:receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Sat, 05 Jul 2025 17:24:34 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'23'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+DEBUG:httpcore.http11:receive_response_body.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:receive_response_body.complete
+DEBUG:httpcore.http11:response_closed.started
+DEBUG:httpcore.http11:response_closed.complete
+DEBUG:telegram.ext.ExtBot:Call to Bot API endpoint `getUpdates` finished with return value `[]`
+DEBUG:telegram.ext.ExtBot:No new updates found.
+DEBUG:telegram.ext.ExtBot:Calling Bot API endpoint `getUpdates` with parameters `{'timeout': 10, 'offset': 400629795}`
+DEBUG:httpcore.http11:send_request_headers.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:send_request_headers.complete
+DEBUG:httpcore.http11:send_request_body.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:send_request_body.complete
+DEBUG:httpcore.http11:receive_response_headers.started request=<Request [b'POST']>
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2025-07-05 20:24:44.066651+03:00 (in 4.996187 seconds)
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:24:44 IDT)" (scheduled at 2025-07-05 20:24:39.066651+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:24:44 IDT)" executed successfully
+DEBUG:Helper.logger:[]
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2025-07-05 20:24:49.066651+03:00 (in 4.998427 seconds)
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:24:49 IDT)" (scheduled at 2025-07-05 20:24:44.066651+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:24:49 IDT)" executed successfully
+DEBUG:Helper.logger:[]
+DEBUG:httpcore.http11:receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Sat, 05 Jul 2025 17:24:44 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'23'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+DEBUG:httpcore.http11:receive_response_body.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:receive_response_body.complete
+DEBUG:httpcore.http11:response_closed.started
+DEBUG:httpcore.http11:response_closed.complete
+DEBUG:telegram.ext.ExtBot:Call to Bot API endpoint `getUpdates` finished with return value `[]`
+DEBUG:telegram.ext.ExtBot:No new updates found.
+DEBUG:telegram.ext.ExtBot:Calling Bot API endpoint `getUpdates` with parameters `{'timeout': 10, 'offset': 400629795}`
+DEBUG:httpcore.http11:send_request_headers.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:send_request_headers.complete
+DEBUG:httpcore.http11:send_request_body.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:send_request_body.complete
+DEBUG:httpcore.http11:receive_response_headers.started request=<Request [b'POST']>
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2025-07-05 20:24:54.066651+03:00 (in 4.996502 seconds)
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:24:54 IDT)" (scheduled at 2025-07-05 20:24:49.066651+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:24:54 IDT)" executed successfully
+DEBUG:Helper.logger:[]
+DEBUG:telegram.ext.Application:Application received stop signal. Shutting down.
+DEBUG:telegram.ext.Updater:Stopping Updater
+DEBUG:telegram.ext.Updater:Waiting background polling task to finish up.
+DEBUG:telegram.ext.Updater:Network loop retry getting Updates was cancelled
+DEBUG:httpcore.http11:receive_response_headers.failed exception=CancelledError()
+DEBUG:httpcore.http11:response_closed.started
+DEBUG:telegram.ext.Updater:Calling `get_updates` one more time to mark all fetched updates as read.
+DEBUG:telegram.ext.ExtBot:Calling Bot API endpoint `getUpdates` with parameters `{'timeout': 0, 'offset': 400629795}`
+DEBUG:httpcore.http11:response_closed.complete
+DEBUG:httpcore.connection:connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG:httpcore.connection:connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000020D7A2F0C30>
+DEBUG:httpcore.connection:start_tls.started ssl_context=<ssl.SSLContext object at 0x0000020D7A1D72F0> server_hostname='api.telegram.org' timeout=5.0
+DEBUG:httpcore.connection:start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000020D7A24EE70>
+DEBUG:httpcore.http11:send_request_headers.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:send_request_headers.complete
+DEBUG:httpcore.http11:send_request_body.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:send_request_body.complete
+DEBUG:httpcore.http11:receive_response_headers.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Sat, 05 Jul 2025 17:24:51 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'23'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+DEBUG:httpcore.http11:receive_response_body.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:receive_response_body.complete
+DEBUG:httpcore.http11:response_closed.started
+DEBUG:httpcore.http11:response_closed.complete
+DEBUG:telegram.ext.ExtBot:Call to Bot API endpoint `getUpdates` finished with return value `[]`
+DEBUG:telegram.ext.ExtBot:No new updates found.
+DEBUG:telegram.ext.Updater:Updater.stop() is complete
+INFO:telegram.ext.Application:Application is stopping. This might take a moment.
+DEBUG:telegram.ext.Application:Waiting for update_queue to join
+DEBUG:telegram.ext.Application:Application stopped fetching of updates.
+DEBUG:telegram.ext.Application:Waiting for running jobs to finish
+INFO:apscheduler.scheduler:Scheduler has been shut down
+DEBUG:telegram.ext.Application:JobQueue stopped
+DEBUG:telegram.ext.Application:Waiting for `create_task` calls to be processed
+INFO:telegram.ext.Application:Application.stop() complete
+DEBUG:httpcore.connection:close.started
+DEBUG:httpcore.connection:close.started
+DEBUG:httpcore.connection:close.complete
+DEBUG:httpcore.connection:close.complete
+DEBUG:telegram.ext.ExtBot:This Bot is already shut down. Returning.
+DEBUG:telegram.ext.Updater:Shut down of Updater complete
+DEBUG:asyncio:Using proactor: IocpProactor
+DEBUG:tzlocal:Looking up time zone info from registry
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "main.<locals>.<lambda>" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2025-07-05 20:24:59.737553+03:00 (in 4.998467 seconds)
+DEBUG:telegram.ext.ExtBot:Calling Bot API endpoint `getMe` with parameters `{}`
+DEBUG:httpcore.connection:connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG:httpcore.connection:connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000020A7E679A90>
+DEBUG:httpcore.connection:start_tls.started ssl_context=<ssl.SSLContext object at 0x0000020A7E5E7260> server_hostname='api.telegram.org' timeout=5.0
+DEBUG:httpcore.connection:start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000020A7E65B610>
+DEBUG:httpcore.http11:send_request_headers.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:send_request_headers.complete
+DEBUG:httpcore.http11:send_request_body.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:send_request_body.complete
+DEBUG:httpcore.http11:receive_response_headers.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Sat, 05 Jul 2025 17:24:54 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'270'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getMe "HTTP/1.1 200 OK"
+DEBUG:httpcore.http11:receive_response_body.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:receive_response_body.complete
+DEBUG:httpcore.http11:response_closed.started
+DEBUG:httpcore.http11:response_closed.complete
+DEBUG:telegram.ext.ExtBot:Call to Bot API endpoint `getMe` finished with return value `{'id': 8168154252, 'is_bot': True, 'first_name': 'notification', 'username': 'donotforget_notification_bot', 'can_join_groups': True, 'can_read_all_group_messages': False, 'supports_inline_queries': False, 'can_connect_to_business': False, 'has_main_web_app': False}`
+DEBUG:telegram.ext.ExtBot:This Bot is already initialized.
+DEBUG:telegram.ext.Updater:Updater started (polling)
+DEBUG:telegram.ext.Updater:Start network loop retry bootstrap del webhook
+DEBUG:telegram.ext.Updater:Deleting webhook
+DEBUG:telegram.ext.ExtBot:Calling Bot API endpoint `deleteWebhook` with parameters `{}`
+DEBUG:httpcore.http11:send_request_headers.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:send_request_headers.complete
+DEBUG:httpcore.http11:send_request_body.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:send_request_body.complete
+DEBUG:httpcore.http11:receive_response_headers.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Sat, 05 Jul 2025 17:24:54 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'68'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/deleteWebhook "HTTP/1.1 200 OK"
+DEBUG:httpcore.http11:receive_response_body.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:receive_response_body.complete
+DEBUG:httpcore.http11:response_closed.started
+DEBUG:httpcore.http11:response_closed.complete
+DEBUG:telegram.ext.ExtBot:Call to Bot API endpoint `deleteWebhook` finished with return value `True`
+DEBUG:telegram.ext.Updater:Bootstrap done
+DEBUG:telegram.ext.Updater:Waiting for polling to start
+DEBUG:telegram.ext.Updater:Polling updates from Telegram started
+DEBUG:telegram.ext.Updater:Start network loop retry getting Updates
+DEBUG:telegram.ext.ExtBot:Calling Bot API endpoint `getUpdates` with parameters `{'timeout': 10, 'offset': 0}`
+INFO:apscheduler.scheduler:Scheduler started
+DEBUG:telegram.ext.Application:JobQueue started
+INFO:telegram.ext.Application:Application started
+DEBUG:httpcore.connection:connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:No jobs; waiting until a job is added
+DEBUG:httpcore.connection:connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000020A7E6D9D10>
+DEBUG:httpcore.connection:start_tls.started ssl_context=<ssl.SSLContext object at 0x0000020A7E5E72F0> server_hostname='api.telegram.org' timeout=5.0
+DEBUG:httpcore.connection:start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000020A7E61BBB0>
+DEBUG:httpcore.http11:send_request_headers.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:send_request_headers.complete
+DEBUG:httpcore.http11:send_request_body.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:send_request_body.complete
+DEBUG:httpcore.http11:receive_response_headers.started request=<Request [b'POST']>
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:24:59 IDT)" (scheduled at 2025-07-05 20:24:59.737553+03:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2025-07-05 20:25:04.737553+03:00 (in 4.996899 seconds)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:25:04 IDT)" executed successfully
+DEBUG:Helper.logger:[]
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2025-07-05 20:25:09.737553+03:00 (in 4.989384 seconds)
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:25:09 IDT)" (scheduled at 2025-07-05 20:25:04.737553+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:25:09 IDT)" executed successfully
+DEBUG:Helper.logger:[]
+DEBUG:httpcore.http11:receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Sat, 05 Jul 2025 17:25:04 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'23'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+DEBUG:httpcore.http11:receive_response_body.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:receive_response_body.complete
+DEBUG:httpcore.http11:response_closed.started
+DEBUG:httpcore.http11:response_closed.complete
+DEBUG:telegram.ext.ExtBot:Call to Bot API endpoint `getUpdates` finished with return value `[]`
+DEBUG:telegram.ext.ExtBot:No new updates found.
+DEBUG:telegram.ext.ExtBot:Calling Bot API endpoint `getUpdates` with parameters `{'timeout': 10, 'offset': 0}`
+DEBUG:httpcore.http11:send_request_headers.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:send_request_headers.complete
+DEBUG:httpcore.http11:send_request_body.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:send_request_body.complete
+DEBUG:httpcore.http11:receive_response_headers.started request=<Request [b'POST']>
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2025-07-05 20:25:14.737553+03:00 (in 4.985191 seconds)
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:25:14 IDT)" (scheduled at 2025-07-05 20:25:09.737553+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:25:14 IDT)" executed successfully
+DEBUG:Helper.logger:[]
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2025-07-05 20:25:19.737553+03:00 (in 4.995424 seconds)
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:25:19 IDT)" (scheduled at 2025-07-05 20:25:14.737553+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:25:19 IDT)" executed successfully
+DEBUG:Helper.logger:[]
+DEBUG:httpcore.http11:receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.18.0'), (b'Date', b'Sat, 05 Jul 2025 17:25:14 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'23'), (b'Connection', b'keep-alive'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Methods', b'GET, POST, OPTIONS'), (b'Access-Control-Expose-Headers', b'Content-Length,Content-Type,Date,Server,Connection')])
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+DEBUG:httpcore.http11:receive_response_body.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:receive_response_body.complete
+DEBUG:httpcore.http11:response_closed.started
+DEBUG:httpcore.http11:response_closed.complete
+DEBUG:telegram.ext.ExtBot:Call to Bot API endpoint `getUpdates` finished with return value `[]`
+DEBUG:telegram.ext.ExtBot:No new updates found.
+DEBUG:telegram.ext.ExtBot:Calling Bot API endpoint `getUpdates` with parameters `{'timeout': 10, 'offset': 0}`
+DEBUG:httpcore.http11:send_request_headers.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:send_request_headers.complete
+DEBUG:httpcore.http11:send_request_body.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:send_request_body.complete
+DEBUG:httpcore.http11:receive_response_headers.started request=<Request [b'POST']>
+DEBUG:telegram.ext.Application:Application received stop signal. Shutting down.
+DEBUG:telegram.ext.Updater:Stopping Updater
+DEBUG:telegram.ext.Updater:Waiting background polling task to finish up.
+DEBUG:telegram.ext.Updater:Network loop retry getting Updates was cancelled
+DEBUG:httpcore.http11:receive_response_headers.failed exception=CancelledError()
+DEBUG:httpcore.http11:response_closed.started
+DEBUG:telegram.ext.Updater:Calling `get_updates` one more time to mark all fetched updates as read.
+DEBUG:telegram.ext.ExtBot:Calling Bot API endpoint `getUpdates` with parameters `{'timeout': 0, 'offset': 0}`
+DEBUG:httpcore.http11:response_closed.complete
+DEBUG:httpcore.connection:connect_tcp.started host='api.telegram.org' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG:httpcore.connection:connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000020A7E6E43E0>
+DEBUG:httpcore.connection:start_tls.started ssl_context=<ssl.SSLContext object at 0x0000020A7E5E72F0> server_hostname='api.telegram.org' timeout=5.0
+DEBUG:httpcore.connection:start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x0000020A7E65E8D0>
+DEBUG:httpcore.http11:send_request_headers.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:send_request_headers.complete
+DEBUG:httpcore.http11:send_request_body.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:send_request_body.complete
+DEBUG:httpcore.http11:receive_response_headers.started request=<Request [b'POST']>
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2025-07-05 20:25:24.737553+03:00 (in 4.989882 seconds)
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:25:24 IDT)" (scheduled at 2025-07-05 20:25:19.737553+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:25:24 IDT)" executed successfully
+DEBUG:Helper.logger:[]

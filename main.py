@@ -1,5 +1,6 @@
 # poject imports
 import Helper.Constants as Constants
+from Helper.logger import Log
 from Commands.SetNotification import Set_Notification
 from Postgres.Connection import DB
 
@@ -30,6 +31,7 @@ from telegram.ext import (
 load_dotenv()
 SN = Set_Notification()
 db = DB()
+logger = Log()
 
 # define states
 MENU, ASK_NAME, ASK_NOTIFICATION, ASK_DATE, ASK_RATE = range(5)
@@ -84,7 +86,7 @@ async def check_status():
 
 async def sent_notification():
     a = db.getMessages()
-    print(a, len(a))
+    logger.log(a)
     if len(a) == 0:
         return
     
