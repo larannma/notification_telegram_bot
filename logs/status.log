@@ -173,3 +173,524 @@ INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42
 INFO:telegram.ext.Application:Application is stopping. This might take a moment.
 INFO:apscheduler.scheduler:Scheduler has been shut down
 INFO:telegram.ext.Application:Application.stop() complete
+2025-07-05 20:44:05,594 Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-07-05 20:44:05,594 Added job "main.<locals>.<lambda>" to job store "default"
+2025-07-05 20:44:05,594 Scheduler started
+2025-07-05 20:44:06,005 HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getMe "HTTP/1.1 200 OK"
+2025-07-05 20:44:06,085 HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/deleteWebhook "HTTP/1.1 200 OK"
+2025-07-05 20:44:06,085 Scheduler started
+2025-07-05 20:44:06,085 Application started
+2025-07-05 20:44:10,609 Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:44:10 IDT)" (scheduled at 2025-07-05 20:44:10.594039+03:00)
+2025-07-05 20:44:10,609 Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:44:15 IDT)" executed successfully
+2025-07-05 20:44:10,610 []
+2025-07-05 20:44:15,601 Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:44:20 IDT)" (scheduled at 2025-07-05 20:44:15.594039+03:00)
+2025-07-05 20:44:15,601 []
+2025-07-05 20:44:15,601 Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:44:20 IDT)" executed successfully
+2025-07-05 20:44:16,305 HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+2025-07-05 20:44:20,597 Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:44:25 IDT)" (scheduled at 2025-07-05 20:44:20.594039+03:00)
+2025-07-05 20:44:20,598 Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:44:25 IDT)" executed successfully
+2025-07-05 20:44:20,598 []
+2025-07-05 20:44:25,610 Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:44:30 IDT)" (scheduled at 2025-07-05 20:44:25.594039+03:00)
+2025-07-05 20:44:25,610 Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:44:30 IDT)" executed successfully
+2025-07-05 20:44:25,612 []
+2025-07-05 20:44:26,375 HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+2025-07-05 20:44:30,608 Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:44:35 IDT)" (scheduled at 2025-07-05 20:44:30.594039+03:00)
+2025-07-05 20:44:30,608 Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:44:35 IDT)" executed successfully
+2025-07-05 20:44:30,609 []
+2025-07-05 20:44:35,601 Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:44:40 IDT)" (scheduled at 2025-07-05 20:44:35.594039+03:00)
+2025-07-05 20:44:35,601 []
+2025-07-05 20:44:35,601 Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:44:40 IDT)" executed successfully
+2025-07-05 20:44:36,476 HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+2025-07-05 20:44:40,600 Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:44:45 IDT)" (scheduled at 2025-07-05 20:44:40.594039+03:00)
+2025-07-05 20:44:40,600 []
+2025-07-05 20:44:40,601 Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:44:45 IDT)" executed successfully
+2025-07-05 20:44:45,609 Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:44:50 IDT)" (scheduled at 2025-07-05 20:44:45.594039+03:00)
+2025-07-05 20:44:45,609 []
+2025-07-05 20:44:45,609 Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:44:50 IDT)" executed successfully
+2025-07-05 20:44:46,556 HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+2025-07-05 20:44:50,600 Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:44:55 IDT)" (scheduled at 2025-07-05 20:44:50.594039+03:00)
+2025-07-05 20:44:50,601 []
+2025-07-05 20:44:50,601 Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:44:55 IDT)" executed successfully
+2025-07-05 20:44:55,596 Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:45:00 IDT)" (scheduled at 2025-07-05 20:44:55.594039+03:00)
+2025-07-05 20:44:55,596 []
+2025-07-05 20:44:55,596 Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:45:00 IDT)" executed successfully
+2025-07-05 20:44:56,635 HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+2025-07-05 20:44:58,269 HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 409 Conflict"
+2025-07-05 20:44:58,269 No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_updater.py", line 750, in _network_loop_retry
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_updater.py", line 744, in do_action
+    return action_cb_task.result()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_updater.py", line 371, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_extbot.py", line 650, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 4480, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 619, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_extbot.py", line 354, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 648, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_baserequest.py", line 202, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_baserequest.py", line 385, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-05 20:45:00,614 Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:45:05 IDT)" (scheduled at 2025-07-05 20:45:00.594039+03:00)
+2025-07-05 20:45:00,614 []
+2025-07-05 20:45:00,614 Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:45:05 IDT)" executed successfully
+2025-07-05 20:45:03,403 HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 409 Conflict"
+2025-07-05 20:45:03,403 No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_updater.py", line 750, in _network_loop_retry
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_updater.py", line 744, in do_action
+    return action_cb_task.result()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_updater.py", line 371, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_extbot.py", line 650, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 4480, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 619, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_extbot.py", line 354, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 648, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_baserequest.py", line 202, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_baserequest.py", line 385, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-05 20:45:05,606 Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:45:10 IDT)" (scheduled at 2025-07-05 20:45:05.594039+03:00)
+2025-07-05 20:45:05,606 Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:45:10 IDT)" executed successfully
+2025-07-05 20:45:05,606 []
+2025-07-05 20:45:09,558 HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 409 Conflict"
+2025-07-05 20:45:09,558 No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_updater.py", line 750, in _network_loop_retry
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_updater.py", line 744, in do_action
+    return action_cb_task.result()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_updater.py", line 371, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_extbot.py", line 650, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 4480, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 619, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_extbot.py", line 354, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 648, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_baserequest.py", line 202, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_baserequest.py", line 385, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-05 20:45:10,603 Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:45:15 IDT)" (scheduled at 2025-07-05 20:45:10.594039+03:00)
+2025-07-05 20:45:10,603 []
+2025-07-05 20:45:10,603 Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:45:15 IDT)" executed successfully
+2025-07-05 20:45:15,601 Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:45:20 IDT)" (scheduled at 2025-07-05 20:45:15.594039+03:00)
+2025-07-05 20:45:15,601 []
+2025-07-05 20:45:15,602 Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:45:20 IDT)" executed successfully
+2025-07-05 20:45:17,198 HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 409 Conflict"
+2025-07-05 20:45:17,199 No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_updater.py", line 750, in _network_loop_retry
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_updater.py", line 744, in do_action
+    return action_cb_task.result()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_updater.py", line 371, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_extbot.py", line 650, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 4480, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 619, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_extbot.py", line 354, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 648, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_baserequest.py", line 202, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_baserequest.py", line 385, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-05 20:45:20,598 Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:45:25 IDT)" (scheduled at 2025-07-05 20:45:20.594039+03:00)
+2025-07-05 20:45:20,599 Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:45:25 IDT)" executed successfully
+2025-07-05 20:45:20,599 []
+2025-07-05 20:45:25,605 Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:45:30 IDT)" (scheduled at 2025-07-05 20:45:25.594039+03:00)
+2025-07-05 20:45:25,606 []
+2025-07-05 20:45:25,606 Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:45:30 IDT)" executed successfully
+2025-07-05 20:45:30,600 Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:45:35 IDT)" (scheduled at 2025-07-05 20:45:30.594039+03:00)
+2025-07-05 20:45:30,600 []
+2025-07-05 20:45:30,600 Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:45:35 IDT)" executed successfully
+2025-07-05 20:45:30,667 HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+2025-07-05 20:45:35,605 Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:45:40 IDT)" (scheduled at 2025-07-05 20:45:35.594039+03:00)
+2025-07-05 20:45:35,606 Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:45:40 IDT)" executed successfully
+2025-07-05 20:45:35,606 []
+2025-07-05 20:45:40,603 Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:45:45 IDT)" (scheduled at 2025-07-05 20:45:40.594039+03:00)
+2025-07-05 20:45:40,604 []
+2025-07-05 20:45:40,604 Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:45:45 IDT)" executed successfully
+2025-07-05 20:45:40,740 HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+2025-07-05 20:45:45,606 Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:45:50 IDT)" (scheduled at 2025-07-05 20:45:45.594039+03:00)
+2025-07-05 20:45:45,606 Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:45:50 IDT)" executed successfully
+2025-07-05 20:45:45,606 []
+2025-07-05 20:45:50,600 Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:45:55 IDT)" (scheduled at 2025-07-05 20:45:50.594039+03:00)
+2025-07-05 20:45:50,600 Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:45:55 IDT)" executed successfully
+2025-07-05 20:45:50,600 []
+2025-07-05 20:45:50,809 HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+2025-07-05 20:45:55,606 Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:46:00 IDT)" (scheduled at 2025-07-05 20:45:55.594039+03:00)
+2025-07-05 20:45:55,606 Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:46:00 IDT)" executed successfully
+2025-07-05 20:45:55,606 []
+2025-07-05 20:46:00,606 Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:46:05 IDT)" (scheduled at 2025-07-05 20:46:00.594039+03:00)
+2025-07-05 20:46:00,606 Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:46:05 IDT)" executed successfully
+2025-07-05 20:46:00,607 []
+2025-07-05 20:46:00,880 HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+2025-07-05 20:46:05,595 Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:46:10 IDT)" (scheduled at 2025-07-05 20:46:05.594039+03:00)
+2025-07-05 20:46:05,595 Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:46:10 IDT)" executed successfully
+2025-07-05 20:46:05,596 []
+2025-07-05 20:46:10,610 Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:46:15 IDT)" (scheduled at 2025-07-05 20:46:10.594039+03:00)
+2025-07-05 20:46:10,610 Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:46:15 IDT)" executed successfully
+2025-07-05 20:46:10,611 []
+2025-07-05 20:46:10,949 HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+2025-07-05 20:46:15,595 Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:46:20 IDT)" (scheduled at 2025-07-05 20:46:15.594039+03:00)
+2025-07-05 20:46:15,595 Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:46:20 IDT)" executed successfully
+2025-07-05 20:46:15,595 []
+2025-07-05 20:46:20,603 Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:46:25 IDT)" (scheduled at 2025-07-05 20:46:20.594039+03:00)
+2025-07-05 20:46:20,603 Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:46:25 IDT)" executed successfully
+2025-07-05 20:46:20,603 []
+2025-07-05 20:46:21,020 HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+2025-07-05 20:46:25,595 Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:46:30 IDT)" (scheduled at 2025-07-05 20:46:25.594039+03:00)
+2025-07-05 20:46:25,595 Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:46:30 IDT)" executed successfully
+2025-07-05 20:46:25,596 []
+2025-07-05 20:46:30,596 Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:46:35 IDT)" (scheduled at 2025-07-05 20:46:30.594039+03:00)
+2025-07-05 20:46:30,596 Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:46:35 IDT)" executed successfully
+2025-07-05 20:46:30,596 []
+2025-07-05 20:46:31,090 HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+2025-07-05 20:46:35,606 Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:46:40 IDT)" (scheduled at 2025-07-05 20:46:35.594039+03:00)
+2025-07-05 20:46:35,607 Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:46:40 IDT)" executed successfully
+2025-07-05 20:46:35,607 []
+2025-07-05 20:46:40,595 Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:46:45 IDT)" (scheduled at 2025-07-05 20:46:40.594039+03:00)
+2025-07-05 20:46:40,595 Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:46:45 IDT)" executed successfully
+2025-07-05 20:46:40,595 []
+2025-07-05 20:46:41,170 HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+2025-07-05 20:46:45,604 Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:46:50 IDT)" (scheduled at 2025-07-05 20:46:45.594039+03:00)
+2025-07-05 20:46:45,604 Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:46:50 IDT)" executed successfully
+2025-07-05 20:46:45,605 []
+2025-07-05 20:46:50,598 Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:46:55 IDT)" (scheduled at 2025-07-05 20:46:50.594039+03:00)
+2025-07-05 20:46:50,599 []
+2025-07-05 20:46:50,599 Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:46:55 IDT)" executed successfully
+2025-07-05 20:46:51,240 HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+2025-07-05 20:46:55,609 Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:47:00 IDT)" (scheduled at 2025-07-05 20:46:55.594039+03:00)
+2025-07-05 20:46:55,609 Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:47:00 IDT)" executed successfully
+2025-07-05 20:46:55,609 []
+2025-07-05 20:47:00,603 Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:47:05 IDT)" (scheduled at 2025-07-05 20:47:00.594039+03:00)
+2025-07-05 20:47:00,603 Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:47:05 IDT)" executed successfully
+2025-07-05 20:47:00,604 []
+2025-07-05 20:47:01,320 HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+2025-07-05 20:47:05,604 Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:47:10 IDT)" (scheduled at 2025-07-05 20:47:05.594039+03:00)
+2025-07-05 20:47:05,604 Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:47:10 IDT)" executed successfully
+2025-07-05 20:47:05,605 []
+2025-07-05 20:47:07,396 HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 409 Conflict"
+2025-07-05 20:47:07,397 No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_updater.py", line 750, in _network_loop_retry
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_updater.py", line 744, in do_action
+    return action_cb_task.result()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_updater.py", line 371, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_extbot.py", line 650, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 4480, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 619, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_extbot.py", line 354, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 648, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_baserequest.py", line 202, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_baserequest.py", line 385, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-05 20:47:10,605 Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:47:15 IDT)" (scheduled at 2025-07-05 20:47:10.594039+03:00)
+2025-07-05 20:47:10,605 Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:47:15 IDT)" executed successfully
+2025-07-05 20:47:10,605 []
+2025-07-05 20:47:12,572 HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 409 Conflict"
+2025-07-05 20:47:12,572 No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_updater.py", line 750, in _network_loop_retry
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_updater.py", line 744, in do_action
+    return action_cb_task.result()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_updater.py", line 371, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_extbot.py", line 650, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 4480, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 619, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_extbot.py", line 354, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 648, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_baserequest.py", line 202, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_baserequest.py", line 385, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-05 20:47:15,595 Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:47:20 IDT)" (scheduled at 2025-07-05 20:47:15.594039+03:00)
+2025-07-05 20:47:15,595 Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:47:20 IDT)" executed successfully
+2025-07-05 20:47:15,596 []
+2025-07-05 20:47:17,156 HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 409 Conflict"
+2025-07-05 20:47:17,156 No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_updater.py", line 750, in _network_loop_retry
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_updater.py", line 744, in do_action
+    return action_cb_task.result()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_updater.py", line 371, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_extbot.py", line 650, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 4480, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 619, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_extbot.py", line 354, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 648, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_baserequest.py", line 202, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\luigodull\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_baserequest.py", line 385, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-05 20:47:20,603 Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:47:25 IDT)" (scheduled at 2025-07-05 20:47:20.594039+03:00)
+2025-07-05 20:47:20,603 Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:47:25 IDT)" executed successfully
+2025-07-05 20:47:20,604 []
+2025-07-05 20:47:23,773 HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+2025-07-05 20:47:23,773 Application is stopping. This might take a moment.
+2025-07-05 20:47:23,773 Scheduler has been shut down
+2025-07-05 20:47:23,791 Application.stop() complete
