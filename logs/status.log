@@ -1,0 +1,175 @@
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "main.<locals>.<lambda>" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getMe "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/deleteWebhook "HTTP/1.1 200 OK"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:telegram.ext.Application:Application started
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:30:50 IDT)" (scheduled at 2025-07-05 20:30:50.276101+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:30:55 IDT)" executed successfully
+INFO:Helper.logger:[]
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:31:00 IDT)" (scheduled at 2025-07-05 20:30:55.276101+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:31:00 IDT)" executed successfully
+INFO:Helper.logger:[]
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:31:05 IDT)" (scheduled at 2025-07-05 20:31:00.276101+03:00)
+INFO:Helper.logger:[]
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:31:05 IDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:31:10 IDT)" (scheduled at 2025-07-05 20:31:05.276101+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:31:10 IDT)" executed successfully
+INFO:Helper.logger:[]
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:31:15 IDT)" (scheduled at 2025-07-05 20:31:10.276101+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:31:15 IDT)" executed successfully
+INFO:Helper.logger:[]
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:31:20 IDT)" (scheduled at 2025-07-05 20:31:15.276101+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:31:20 IDT)" executed successfully
+INFO:Helper.logger:[]
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:31:25 IDT)" (scheduled at 2025-07-05 20:31:20.276101+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:31:25 IDT)" executed successfully
+INFO:Helper.logger:[]
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:31:30 IDT)" (scheduled at 2025-07-05 20:31:25.276101+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:31:30 IDT)" executed successfully
+INFO:Helper.logger:[]
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:31:35 IDT)" (scheduled at 2025-07-05 20:31:30.276101+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:31:35 IDT)" executed successfully
+INFO:Helper.logger:[]
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:31:40 IDT)" (scheduled at 2025-07-05 20:31:35.276101+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:31:40 IDT)" executed successfully
+INFO:Helper.logger:[]
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:31:45 IDT)" (scheduled at 2025-07-05 20:31:40.276101+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:31:45 IDT)" executed successfully
+INFO:Helper.logger:[]
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:31:50 IDT)" (scheduled at 2025-07-05 20:31:45.276101+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:31:50 IDT)" executed successfully
+INFO:Helper.logger:[]
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:31:55 IDT)" (scheduled at 2025-07-05 20:31:50.276101+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:31:55 IDT)" executed successfully
+INFO:Helper.logger:[]
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:32:00 IDT)" (scheduled at 2025-07-05 20:31:55.276101+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:32:00 IDT)" executed successfully
+INFO:Helper.logger:[]
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:32:05 IDT)" (scheduled at 2025-07-05 20:32:00.276101+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:32:05 IDT)" executed successfully
+INFO:Helper.logger:[]
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:32:10 IDT)" (scheduled at 2025-07-05 20:32:05.276101+03:00)
+INFO:Helper.logger:[]
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:32:10 IDT)" executed successfully
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:32:15 IDT)" (scheduled at 2025-07-05 20:32:10.276101+03:00)
+INFO:Helper.logger:[]
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:32:15 IDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:32:20 IDT)" (scheduled at 2025-07-05 20:32:15.276101+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:32:20 IDT)" executed successfully
+INFO:Helper.logger:[]
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:32:25 IDT)" (scheduled at 2025-07-05 20:32:20.276101+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:32:25 IDT)" executed successfully
+INFO:Helper.logger:[]
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:32:30 IDT)" (scheduled at 2025-07-05 20:32:25.276101+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:32:30 IDT)" executed successfully
+INFO:Helper.logger:[]
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:32:35 IDT)" (scheduled at 2025-07-05 20:32:30.276101+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:32:35 IDT)" executed successfully
+INFO:Helper.logger:[]
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:32:40 IDT)" (scheduled at 2025-07-05 20:32:35.276101+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:32:40 IDT)" executed successfully
+INFO:Helper.logger:[]
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:32:45 IDT)" (scheduled at 2025-07-05 20:32:40.276101+03:00)
+INFO:Helper.logger:[]
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:32:45 IDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:32:50 IDT)" (scheduled at 2025-07-05 20:32:45.276101+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:32:50 IDT)" executed successfully
+INFO:Helper.logger:[]
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:32:55 IDT)" (scheduled at 2025-07-05 20:32:50.276101+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:32:55 IDT)" executed successfully
+INFO:Helper.logger:[]
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:33:00 IDT)" (scheduled at 2025-07-05 20:32:55.276101+03:00)
+INFO:Helper.logger:[]
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:33:00 IDT)" executed successfully
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:33:05 IDT)" (scheduled at 2025-07-05 20:33:00.276101+03:00)
+INFO:Helper.logger:[]
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:33:05 IDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:33:10 IDT)" (scheduled at 2025-07-05 20:33:05.276101+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:33:10 IDT)" executed successfully
+INFO:Helper.logger:[]
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:33:15 IDT)" (scheduled at 2025-07-05 20:33:10.276101+03:00)
+INFO:Helper.logger:[]
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:33:15 IDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:33:20 IDT)" (scheduled at 2025-07-05 20:33:15.276101+03:00)
+INFO:Helper.logger:[]
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:33:20 IDT)" executed successfully
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:33:25 IDT)" (scheduled at 2025-07-05 20:33:20.276101+03:00)
+INFO:Helper.logger:[]
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:33:25 IDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:33:30 IDT)" (scheduled at 2025-07-05 20:33:25.276101+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:33:30 IDT)" executed successfully
+INFO:Helper.logger:[]
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:33:35 IDT)" (scheduled at 2025-07-05 20:33:30.276101+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:33:35 IDT)" executed successfully
+INFO:Helper.logger:[]
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:33:40 IDT)" (scheduled at 2025-07-05 20:33:35.276101+03:00)
+INFO:Helper.logger:[]
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:33:40 IDT)" executed successfully
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:33:45 IDT)" (scheduled at 2025-07-05 20:33:40.276101+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:33:45 IDT)" executed successfully
+INFO:Helper.logger:[]
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:33:50 IDT)" (scheduled at 2025-07-05 20:33:45.276101+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:33:50 IDT)" executed successfully
+INFO:Helper.logger:[]
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:33:55 IDT)" (scheduled at 2025-07-05 20:33:50.276101+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:33:55 IDT)" executed successfully
+INFO:Helper.logger:[]
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:34:00 IDT)" (scheduled at 2025-07-05 20:33:55.276101+03:00)
+INFO:Helper.logger:[]
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:34:00 IDT)" executed successfully
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:34:05 IDT)" (scheduled at 2025-07-05 20:34:00.276101+03:00)
+INFO:Helper.logger:[]
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:34:05 IDT)" executed successfully
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:34:10 IDT)" (scheduled at 2025-07-05 20:34:05.276101+03:00)
+INFO:Helper.logger:[]
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:34:10 IDT)" executed successfully
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:34:15 IDT)" (scheduled at 2025-07-05 20:34:10.276101+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:34:15 IDT)" executed successfully
+INFO:Helper.logger:[]
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:34:20 IDT)" (scheduled at 2025-07-05 20:34:15.276101+03:00)
+INFO:Helper.logger:[]
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:34:20 IDT)" executed successfully
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:34:25 IDT)" (scheduled at 2025-07-05 20:34:20.276101+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:34:25 IDT)" executed successfully
+INFO:Helper.logger:[]
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:34:30 IDT)" (scheduled at 2025-07-05 20:34:25.276101+03:00)
+INFO:Helper.logger:[]
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:34:30 IDT)" executed successfully
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:34:35 IDT)" (scheduled at 2025-07-05 20:34:30.276101+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:34:35 IDT)" executed successfully
+INFO:Helper.logger:[]
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:34:40 IDT)" (scheduled at 2025-07-05 20:34:35.276101+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:34:40 IDT)" executed successfully
+INFO:Helper.logger:[]
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+INFO:apscheduler.executors.default:Running job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:34:45 IDT)" (scheduled at 2025-07-05 20:34:40.276101+03:00)
+INFO:apscheduler.executors.default:Job "main.<locals>.<lambda> (trigger: interval[0:00:05], next run at: 2025-07-05 20:34:45 IDT)" executed successfully
+INFO:Helper.logger:[]
+INFO:httpx:HTTP Request: POST https://api.telegram.org/bot8168154252:AAH2_M4Uo42jKgJ4-ZdAM_LlM59CRwrsh38/getUpdates "HTTP/1.1 200 OK"
+INFO:telegram.ext.Application:Application is stopping. This might take a moment.
+INFO:apscheduler.scheduler:Scheduler has been shut down
+INFO:telegram.ext.Application:Application.stop() complete
