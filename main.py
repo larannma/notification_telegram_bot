@@ -78,9 +78,14 @@ async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     await update.message.reply_text("Operation cancelled.")
     return ConversationHandler.END
 
-
-async def sent_notiofication():
+async def check_status():
     a = db.getMessages()
+    print(a is not None)
+
+async def sent_notification():
+    a = db.getMessages()
+    if len(a) == 0:
+        return
     
     for i in range(len(a)):
         b = db.getUser(a[i]['user_id'])
@@ -88,26 +93,22 @@ async def sent_notiofication():
 
         db.markMessageAsSent(a[i]['id'])
 
-    print(b[0][0])
+        print(b[0][0])
 
 
 # Main function
 def main() -> None:
     application = Application.builder().token(BOT_TOKEN).build()
-    loop = asyncio.get_event_loop()
 
-    def wrapper():
-        loop.create_task(sent_notiofication())
+    wrapper = asyncio.run(check_status())
 
     scheduler = BackgroundScheduler()
-    scheduler.add_job(
-        wrapper,
-        'interval',
-        seconds=5,
-        max_instances=1
-    )
+    # scheduler.add_job(
+    #     wrapper,
+    #     'interval',
+    #     seconds=5
+    # )
     scheduler.start()
-
 
     conv_handler = ConversationHandler(
         entry_points=[CommandHandler("start", start)],
