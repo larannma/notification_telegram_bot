@@ -18,7 +18,7 @@ db = DB()
 
 # "Set Notification" function
 class Set_Notification():
-    async def ask_name(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+    async def ask_name(self, update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
         name = update.message.text
         context.user_data["name"] = name
 
@@ -27,7 +27,7 @@ class Set_Notification():
 
 
 
-    async def ask_notification(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+    async def ask_notification(self, update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
         notification = update.message.text
         context.user_data["text"] = notification
 
@@ -36,7 +36,7 @@ class Set_Notification():
 
 
 
-    async def ask_date(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+    async def ask_date(self, update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
         date_str = update.message.text
         date_obj = date.fromisoformat(date_str)
         context.user_data["date"] = date_obj

@@ -4,7 +4,7 @@ from Commands.SetNotification import Set_Notification
 from Postgres.Connection import DB
 
 # lib imports
-import os, asyncio
+import os
 from dotenv import load_dotenv
 from datetime import datetime, date, time
 from apscheduler.schedulers.background import BackgroundScheduler
@@ -79,8 +79,11 @@ async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     return ConversationHandler.END
 
 
-async def sent_notiofication():
+# Вот тут названия пересекаются с SN SN = Set_Notification() на 31 строчке, непонятно
+async def sent_notification(ff):
     a = db.getMessages()
+    if len(a) == 0:
+        return
     
     for i in range(len(a)):
         b = db.getUser(a[i]['user_id'])
@@ -88,26 +91,11 @@ async def sent_notiofication():
 
         db.markMessageAsSent(a[i]['id'])
 
-    print(b[0][0])
 
 
 # Main function
 def main() -> None:
     application = Application.builder().token(BOT_TOKEN).build()
-    loop = asyncio.get_event_loop()
-
-    def wrapper():
-        loop.create_task(sent_notiofication())
-
-    scheduler = BackgroundScheduler()
-    scheduler.add_job(
-        wrapper,
-        'interval',
-        seconds=5,
-        max_instances=1
-    )
-    scheduler.start()
-
 
     conv_handler = ConversationHandler(
         entry_points=[CommandHandler("start", start)],
@@ -126,6 +114,7 @@ def main() -> None:
 
     # Start The Bot
     application.add_handler(conv_handler)
+    application.job_queue.run_repeating(sent_notification, interval=5, first=5)
     application.run_polling()
 
 if __name__ == "__main__":
