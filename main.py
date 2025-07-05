@@ -106,11 +106,10 @@ def schedule_background_tasks(loop):
     scheduler.start()
 
 
-# Main function
-async def main():
+def main():
     application = Application.builder().token(BOT_TOKEN).build()
 
-    loop = asyncio.get_running_loop()
+    loop = asyncio.get_event_loop()
     schedule_background_tasks(loop)
 
     conv_handler = ConversationHandler(
@@ -122,11 +121,11 @@ async def main():
             ASK_DATE: [MessageHandler(filters.TEXT & ~filters.COMMAND, SN.ask_date)],
         },
         fallbacks=[CommandHandler("cancel", cancel)],
-        per_message=True
     )
 
     application.add_handler(conv_handler)
-    await application.run_polling()
+    application.run_polling()
+
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    main()
