@@ -84,6 +84,7 @@ async def check_status():
 
 async def sent_notification():
     a = db.getMessages()
+    print(a, len(a))
     if len(a) == 0:
         return
     
@@ -96,38 +97,39 @@ async def sent_notification():
         print(b[0][0])
 
 
-# Main function
 def main() -> None:
     application = Application.builder().token(BOT_TOKEN).build()
 
-    wrapper = asyncio.run(check_status())
+    try:
+        loop = asyncio.get_running_loop()
+    except RuntimeError:
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
 
     scheduler = BackgroundScheduler()
-    # scheduler.add_job(
-    #     wrapper,
-    #     'interval',
-    #     seconds=5
-    # )
+    scheduler.add_job(
+        lambda: asyncio.run_coroutine_threadsafe(sent_notification(), loop),
+        'interval',
+        seconds=5
+    )
     scheduler.start()
 
     conv_handler = ConversationHandler(
         entry_points=[CommandHandler("start", start)],
         states={
-            # setup "Menu" function
             MENU: [CallbackQueryHandler(menu)],
-
-            # setup "Set Notification" function
             ASK_NAME: [MessageHandler(filters.TEXT & ~filters.COMMAND, SN.ask_name)],
             ASK_NOTIFICATION: [MessageHandler(filters.TEXT & ~filters.COMMAND, SN.ask_notification)],
             ASK_DATE: [MessageHandler(filters.TEXT & ~filters.COMMAND, SN.ask_date)],
         },
         fallbacks=[CommandHandler("cancel", cancel)],
+        per_message=True
     )
 
-
-    # Start The Bot
     application.add_handler(conv_handler)
     application.run_polling()
+
+
 
 if __name__ == "__main__":
     main()
