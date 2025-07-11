@@ -6,7 +6,7 @@ from Postgres.Connection import DB
 # lib imports
 import os
 from dotenv import load_dotenv
-from datetime import datetime, date, time
+import datetime
 from apscheduler.schedulers.background import BackgroundScheduler
 
 from telegram.constants import ParseMode
@@ -32,7 +32,7 @@ SN = Set_Notification()
 db = DB()
 
 # define states
-MENU, ASK_NAME, ASK_NOTIFICATION, ASK_DATE, ASK_RATE = range(5)
+MENU_HANDLER, ASK_NAME, ASK_NOTIFICATION, DATE_HANDLER, SENT_AFTER_DAY, SET_MY_DATE, ASK_TIME = range(7)
 BOT_TOKEN = os.getenv('BOT_TOKEN')
 bot = Bot(token=BOT_TOKEN)
 
@@ -50,7 +50,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     reply_markup = InlineKeyboardMarkup(keyboard)
 
     await update.message.reply_text("Please choose the command:", reply_markup=reply_markup, parse_mode=ParseMode.MARKDOWN)
-    return MENU
+    return MENU_HANDLER
 
 
 async def menu(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
@@ -69,7 +69,7 @@ async def menu(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
         reply_markup = InlineKeyboardMarkup(keyboard)
 
         await query.message.reply_text("Please choose the command:", reply_markup=reply_markup, parse_mode=ParseMode.MARKDOWN)
-        return MENU
+        return MENU_HANDLER
 
 
 
@@ -79,7 +79,7 @@ async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     return ConversationHandler.END
 
 
-# Вот тут названия пересекаются с SN SN = Set_Notification() на 31 строчке, непонятно
+
 async def sent_notification(ff):
     a = db.getMessages()
     if len(a) == 0:
@@ -100,13 +100,18 @@ def main() -> None:
     conv_handler = ConversationHandler(
         entry_points=[CommandHandler("start", start)],
         states={
-            # setup "Menu" function
-            MENU: [CallbackQueryHandler(menu)],
+            # "Menu" as Query Handler
+            MENU_HANDLER: [CallbackQueryHandler(menu)],
 
-            # setup "Set Notification" function
+            # "Set Notification" function
             ASK_NAME: [MessageHandler(filters.TEXT & ~filters.COMMAND, SN.ask_name)],
             ASK_NOTIFICATION: [MessageHandler(filters.TEXT & ~filters.COMMAND, SN.ask_notification)],
-            ASK_DATE: [MessageHandler(filters.TEXT & ~filters.COMMAND, SN.ask_date)],
+
+            DATE_HANDLER: [CallbackQueryHandler(SN.date_handler)],
+
+            SENT_AFTER_DAY: [MessageHandler(filters.TEXT & ~filters.COMMAND, SN.sent_after_day)],
+            SET_MY_DATE: [MessageHandler(filters.TEXT & ~filters.COMMAND, SN.set_my_date)],
+            ASK_TIME: [MessageHandler(filters.TEXT & ~filters.COMMAND, SN.ask_time)]
         },
         fallbacks=[CommandHandler("cancel", cancel)],
     )
