@@ -7,7 +7,6 @@ from Postgres.Connection import DB
 import os
 from dotenv import load_dotenv
 import datetime
-from apscheduler.schedulers.background import BackgroundScheduler
 
 from telegram.constants import ParseMode
 from telegram import (
@@ -107,15 +106,17 @@ def main() -> None:
             ASK_NAME: [MessageHandler(filters.TEXT & ~filters.COMMAND, SN.ask_name)],
             ASK_NOTIFICATION: [MessageHandler(filters.TEXT & ~filters.COMMAND, SN.ask_notification)],
 
-            DATE_HANDLER: [CallbackQueryHandler(SN.date_handler)],
-
+            DATE_HANDLER: [
+                CallbackQueryHandler(SN.sent_after_day)
+            ],
             SENT_AFTER_DAY: [MessageHandler(filters.TEXT & ~filters.COMMAND, SN.sent_after_day)],
-            SET_MY_DATE: [MessageHandler(filters.TEXT & ~filters.COMMAND, SN.set_my_date)],
+            
             ASK_TIME: [MessageHandler(filters.TEXT & ~filters.COMMAND, SN.ask_time)]
         },
         fallbacks=[CommandHandler("cancel", cancel)],
     )
-
+            # 
+            # SET_MY_DATE: [MessageHandler(filters.TEXT & ~filters.COMMAND, SN.set_my_date)],
 
     # Start The Bot
     application.add_handler(conv_handler)

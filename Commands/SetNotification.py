@@ -42,43 +42,19 @@ class Set_Notification():
         await update.message.reply_text("Please choose the variation:",reply_markup=reply_markup, parse_mode=ParseMode.MARKDOWN)
         return DATE_HANDLER
 
-
-
-
-
-    async def date_handler(self, update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
-
+    async def date_button_handler(self, update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
         query = update.callback_query
         await query.answer()
-        await query.edit_message_text(text=f"Selected option: {query.data}")
-
-        tg_id = db.checkTGId(str(context.user_data["tg_id"]))
-
+        print(query)
         if query.data == "D":
-            await query.message.reply_text("Your message will sent you tomorow")
+            print("kek")
+            await query.message.reply_text("date_button_handler")
             return SENT_AFTER_DAY
-        
-        elif query.data == "W":
-            pass
-
-        elif query.data == "MD":
-            await query.message.reply_text("Enter your date: dd MM YYYY")
-            return SET_MY_DATE
-
-        else:
-            keyboard = [
-                [InlineKeyboardButton("Set Notification", callback_data="Set Notification")],
-            ]
-            reply_markup = InlineKeyboardMarkup(keyboard)
-
-            await query.message.reply_text("Please choose the command:", reply_markup=reply_markup, parse_mode=ParseMode.MARKDOWN)
-            return MENU_HANDLER
-
-
-
 
     
     async def sent_after_day(self, update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+        print("kek2")
+        await update.message.reply_text("sent_after_day")
         tg_id = db.checkTGId(str(context.user_data["tg_id"]))
 
         dateNow = datetime.datetime.now()
@@ -87,27 +63,27 @@ class Set_Notification():
 
 
         db.insert_notification(tg_id, context.user_data["text"], FinalDate)
+        print("sent_after_day")
+        
         return ASK_TIME
     
 
 
+    # async def set_my_date(self, update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+    #     tg_id = db.checkTGId(str(context.user_data["tg_id"]))
 
+    #     DateStr = update.message.text
+    #     dateList = DateStr.split(" ")
+    #     FinalDate = datetime.date(int(dateList[2]), int(dateList[1]), int(dateList[0]))
 
-
-    async def set_my_date(self, update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
-        tg_id = db.checkTGId(str(context.user_data["tg_id"]))
-
-        DateStr = update.message.text
-        dateList = DateStr.split(" ")
-        FinalDate = datetime.date(int(dateList[2]), int(dateList[1]), int(dateList[0]))
-
-        db.insert_notification(tg_id, context.user_data["text"], FinalDate)
-        return ASK_TIME
+    #     db.insert_notification(tg_id, context.user_data["text"], FinalDate)
+    #     return ASK_TIME
 
 
 
     async def ask_time(self, update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
-        await update.message.reply_text("кек")
+        print("ask_time")
+        await update.message.reply_text("ask_time")
         # return to menu
         keyboard = [
             [InlineKeyboardButton("Set Notification", callback_data="Set Notification")],
