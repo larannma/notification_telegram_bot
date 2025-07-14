@@ -1,19 +1,17 @@
 # poject imports
 import Helper.Constants as Constants
-from Commands.SetNotification import Set_Notification
-from Postgres.Connection import DB
+from Commands.Set_Notification import SetNotification
+from Commands.Sent_Notification import SentNotification
 
 # lib imports
 import os
 from dotenv import load_dotenv
-import datetime
 
 from telegram.constants import ParseMode
 from telegram import (
     InlineKeyboardButton, 
     InlineKeyboardMarkup, 
-    Update,
-    Bot
+    Update
 )
 from telegram.ext import (
     Application, 
@@ -27,13 +25,13 @@ from telegram.ext import (
 
 
 load_dotenv()
-SN = Set_Notification()
-db = DB()
+set_notification_class = SetNotification()
+sent_notification_class = SentNotification()
 
 # define states
-MENU_HANDLER, ASK_NAME, ASK_NOTIFICATION, DATE_HANDLER, SENT_AFTER_DAY, SET_MY_DATE, ASK_TIME = range(7)
+MENU_HANDLER, ASK_NAME, ASK_NOTIFICATION, DATE_BUTTON_HANDLER, SET_MY_DATE, ASK_TIME = range(6)
 BOT_TOKEN = os.getenv('BOT_TOKEN')
-bot = Bot(token=BOT_TOKEN)
+
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     tg_id = update.effective_user.id
@@ -50,6 +48,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
 
     await update.message.reply_text("Please choose the command:", reply_markup=reply_markup, parse_mode=ParseMode.MARKDOWN)
     return MENU_HANDLER
+
 
 
 async def menu(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
@@ -73,22 +72,9 @@ async def menu(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
 
 
 # clean for fallbacks
-async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
-    await update.message.reply_text("Operation cancelled.")
+async def end(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+    await update.message.reply_text("Operation ended.")
     return ConversationHandler.END
-
-
-
-async def sent_notification(ff):
-    a = db.getMessages()
-    if len(a) == 0:
-        return
-    
-    for i in range(len(a)):
-        b = db.getUser(a[i]['user_id'])
-        await bot.send_message(chat_id=int(b[0][0]), text=a[i]['text'])
-
-        db.markMessageAsSent(a[i]['id'])
 
 
 
@@ -102,26 +88,24 @@ def main() -> None:
             # "Menu" as Query Handler
             MENU_HANDLER: [CallbackQueryHandler(menu)],
 
-            # "Set Notification" function
-            ASK_NAME: [MessageHandler(filters.TEXT & ~filters.COMMAND, SN.ask_name)],
-            ASK_NOTIFICATION: [MessageHandler(filters.TEXT & ~filters.COMMAND, SN.ask_notification)],
+            # "Set Notification" functions
+            ASK_NAME: [MessageHandler(filters.TEXT & ~filters.COMMAND, set_notification_class.ask_name)],
+            ASK_NOTIFICATION: [MessageHandler(filters.TEXT & ~filters.COMMAND, set_notification_class.ask_notification)],
 
-            DATE_HANDLER: [
-                CallbackQueryHandler(SN.sent_after_day)
-            ],
-            SENT_AFTER_DAY: [MessageHandler(filters.TEXT & ~filters.COMMAND, SN.sent_after_day)],
-            
-            ASK_TIME: [MessageHandler(filters.TEXT & ~filters.COMMAND, SN.ask_time)]
+            DATE_BUTTON_HANDLER: [CallbackQueryHandler(set_notification_class.date_button_handler)],
+
+            SET_MY_DATE: [MessageHandler(filters.TEXT & ~filters.COMMAND, set_notification_class.set_my_date)],
+            ASK_TIME: [MessageHandler(filters.TEXT & ~filters.COMMAND, set_notification_class.ask_time)]
         },
-        fallbacks=[CommandHandler("cancel", cancel)],
+        fallbacks=[CommandHandler("end", end)],
     )
-            # 
-            # SET_MY_DATE: [MessageHandler(filters.TEXT & ~filters.COMMAND, SN.set_my_date)],
 
     # Start The Bot
     application.add_handler(conv_handler)
-    application.job_queue.run_repeating(sent_notification, interval=5, first=5)
+    application.job_queue.run_repeating(sent_notification_class.sent_notification, interval=5, first=5)
     application.run_polling()
+
+
 
 if __name__ == "__main__":
     main()
