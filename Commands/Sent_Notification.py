@@ -16,8 +16,7 @@ bot = Bot(token=BOT_TOKEN)
 
 # "Sent Notification" function
 class SentNotification():
-	async def sent_notification(self, dump):
-		time.sleep(60000)
+	async def sent_notification(self, temp):
 		messages = database_class.get_messages()
 		if len(messages) == 0:
 			return

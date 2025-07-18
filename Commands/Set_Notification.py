@@ -1,5 +1,6 @@
 # poject imports
 from PostgresDataBase.Connection import DataBase
+from Helper.Date_Formating import DateFormating
 
 # lib imports
 import datetime
@@ -17,6 +18,7 @@ from telegram.constants import ParseMode
 
 MENU_HANDLER, ASK_NAME, ASK_NOTIFICATION, DATE_BUTTON_HANDLER, SET_MY_DATE, ASK_TIME = range(6)
 database_class = DataBase()
+date_formating_class = DateFormating()
 
 
 # "Set Notification" function
@@ -54,20 +56,17 @@ class SetNotification():
 
         # Sent after day function
         if query.data == "Sent after day":
-            tg_id = database_class.check_tg_id(str(context.user_data["tg_id"]))
-
-            dateNow = datetime.datetime.now()
-            DayPOne = dateNow.day + 1
-            FinalDate = datetime.date(dateNow.year, dateNow.month, DayPOne)
-
-            database_class.insert_notification(tg_id, context.user_data["text"], FinalDate)
+            context.user_data["date"] = date_formating_class.date_formting(1)
 
             await query.message.reply_text("Enter time when to sent youe notification: HH:mm")
             return ASK_TIME
         
         # Sent after week function
         if query.data == "Sent after week":
-            pass
+            context.user_data["date"] = date_formating_class.date_formting(7)
+
+            await query.message.reply_text("Enter time when to sent youe notification: HH:mm")
+            return ASK_TIME
 
         # Choose my date function
         if query.data == "Choose my date":
@@ -86,13 +85,11 @@ class SetNotification():
 
     
     async def set_my_date(self, update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
-        tg_id = database_class.check_tg_id(str(context.user_data["tg_id"]))
-
         DateStr = update.message.text
         dateList = DateStr.split(" ")
         FinalDate = datetime.date(int(dateList[2]), int(dateList[1]), int(dateList[0]))
 
-        database_class.insert_notification(tg_id, context.user_data["text"], FinalDate)
+        context.user_data["date"] = FinalDate
 
         await update.message.reply_text("Enter time when to sent youe notification: HH:mm")
         return ASK_TIME
