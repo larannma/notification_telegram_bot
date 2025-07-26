@@ -57,16 +57,70 @@ class SetNotification():
         # Sent after day function
         if query.data == "Sent after day":
             context.user_data["date"] = date_formating_class.date_formting(1)
+            
+            temp = database_class.check_tg_id(str(context.user_data["tg_id"]))
+            if temp is not None:
+                database_class.insert_notification(
+                    temp,
+                    context.user_data["text"],
+                    context.user_data["date"]
+                )
+                
+            else:
+                userId = database_class.insert_user(context.user_data["tg_id"], context.user_data["name"])
+                database_class.insert_notification(
+                    userId,
+                    context.user_data["text"],
+                    context.user_data["date"]
+                )
+            
+            # return to menu
+            keyboard = [
+                [InlineKeyboardButton("Set Notification", callback_data="Set Notification")],
+            ]
+            reply_markup = InlineKeyboardMarkup(keyboard)
 
-            await query.message.reply_text("Enter time when to sent youe notification: HH:mm")
-            return ASK_TIME
+            await query.message.reply_text("Please choose the command:", reply_markup=reply_markup, parse_mode=ParseMode.MARKDOWN)
+            return MENU_HANDLER
+
+        
+        
+        
+        
         
         # Sent after week function
         if query.data == "Sent after week":
             context.user_data["date"] = date_formating_class.date_formting(7)
+            
+            temp = database_class.check_tg_id(str(context.user_data["tg_id"]))
+            if temp is not None:
+                database_class.insert_notification(
+                    temp,
+                    context.user_data["text"],
+                    context.user_data["date"]
+                )
+                
+            else:
+                userId = database_class.insert_user(context.user_data["tg_id"], context.user_data["name"])
+                database_class.insert_notification(
+                    userId,
+                    context.user_data["text"],
+                    context.user_data["date"]
+                )
+            
+            # return to menu
+            keyboard = [
+                [InlineKeyboardButton("Set Notification", callback_data="Set Notification")],
+            ]
+            reply_markup = InlineKeyboardMarkup(keyboard)
 
-            await query.message.reply_text("Enter time when to sent youe notification: HH:mm")
-            return ASK_TIME
+            await query.message.reply_text("Please choose the command:", reply_markup=reply_markup, parse_mode=ParseMode.MARKDOWN)
+            return MENU_HANDLER
+
+
+
+
+
 
         # Choose my date function
         if query.data == "Choose my date":
@@ -87,17 +141,28 @@ class SetNotification():
     async def set_my_date(self, update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
         DateStr = update.message.text
         dateList = DateStr.split(" ")
-        FinalDate = datetime.date(int(dateList[2]), int(dateList[1]), int(dateList[0]))
+        FinalDate = datetime.datetime(int(dateList[2]), int(dateList[1]), int(dateList[0]), int(dateList[3]), int(dateList[4]), 0)
 
-        context.user_data["date"] = FinalDate
+       
+        formatted_date = datetime.datetime.fromtimestamp(FinalDate.timestamp()).strftime('%Y-%m-%d %H:%M:%S')
+        context.user_data["date"] = formatted_date
+        temp = database_class.check_tg_id(str(context.user_data["tg_id"]))
 
-        await update.message.reply_text("Enter time when to sent youe notification: HH:mm")
-        return ASK_TIME
-
-
-
-    async def ask_time(self, update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
-        context.user_data["time"] = update.message.text
+        if temp is not None:
+            database_class.insert_notification(
+                temp,
+                context.user_data["text"],
+                context.user_data["date"]
+            )
+            
+        else:
+            userId = database_class.insert_user(context.user_data["tg_id"], context.user_data["name"])
+            database_class.insert_notification(
+                userId,
+                context.user_data["text"],
+                context.user_data["date"]
+            )
+        
         # return to menu
         keyboard = [
             [InlineKeyboardButton("Set Notification", callback_data="Set Notification")],

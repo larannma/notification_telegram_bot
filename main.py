@@ -95,7 +95,6 @@ def main() -> None:
             DATE_BUTTON_HANDLER: [CallbackQueryHandler(set_notification_class.date_button_handler)],
 
             SET_MY_DATE: [MessageHandler(filters.TEXT & ~filters.COMMAND, set_notification_class.set_my_date)],
-            ASK_TIME: [MessageHandler(filters.TEXT & ~filters.COMMAND, set_notification_class.ask_time)]
         },
         fallbacks=[CommandHandler("end", end)],
     )

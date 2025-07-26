@@ -2,7 +2,7 @@
 from PostgresDataBase.Connection import DataBase
 
 # lib imports
-import os, time
+import os
 from telegram import Bot
 from dotenv import load_dotenv
 
