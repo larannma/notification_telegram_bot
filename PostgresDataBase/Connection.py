@@ -6,7 +6,7 @@ from dotenv import(
 
 load_dotenv()
 
-class DB:
+class DataBase:
     def __init__(self):
         DATABASE_HOST = os.getenv('DATABASE_HOST')
         DATABASE_PORT = os.getenv('DATABASE_PORT')
@@ -24,17 +24,63 @@ class DB:
 
         self.cur = self.conn.cursor()
 
+
+
     def insert_user(self, tg_id, name): 
         self.cur.execute("INSERT INTO users (tg_id, name) VALUES (%s, %s) RETURNING id;", (tg_id, name))
         self.conn.commit()
         id = self.cur.fetchone()[0]
         return id
 
+
+
     def insert_notification(self, userId, text, date):
-        self.cur.execute("INSERT INTO notifications (user_id, text, date) VALUES (%s, %s, %s)", (userId, text, date))
+        self.cur.execute("INSERT INTO notifications (user_id, text, date, sent) VALUES (%s, %s, %s, %s)", (userId, text, date, False))
         self.conn.commit()
 
-    def checkTGId(self, tg_id):
+
+
+    def get_messages(self):
+        query = '''
+            SELECT id, user_id, text, date, sent
+            FROM notifications
+            WHERE date <= NOW() AND sent = FALSE
+        '''
+        self.cur.execute(query)
+        rows = self.cur.fetchall()
+        return [
+            {
+                "id": row[0],
+                "user_id": row[1],
+                "text": row[2],
+                "date": row[3],
+                "sent": row[4]
+            }
+            for row in rows
+        ]
+    
+
+
+    def get_user(self, id):
+        query = '''
+            SELECT tg_id
+            FROM users
+            WHERE id = %s
+        '''
+        self.cur.execute(query, (id,))
+        tg_id = self.cur.fetchall()
+        return tg_id
+
+
+
+    def mark_message_as_sent(self, message_id):
+        query = "UPDATE notifications SET sent = TRUE WHERE id = %s"
+        self.cur.execute(query, (message_id,))
+        self.conn.commit()
+
+
+
+    def check_tg_id(self, tg_id):
         self.cur.execute("SELECT * FROM users WHERE tg_id = %s", (tg_id,))
         self.conn.commit()
         try:
@@ -43,8 +89,3 @@ class DB:
                 return id
         except:
             pass
-
-    def viewData(self):
-        self.cur.execute("SELECT * FROM users;")
-        print(self.cur.fetchall())
-        self.conn.commit()

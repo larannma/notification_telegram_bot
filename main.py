@@ -1,17 +1,18 @@
-import os
-import Constants
-from Postgres.Connection import DB
-from datetime import date
-from dotenv import(
-    load_dotenv
-)
+# poject imports
+import Helper.Constants as Constants
+from Commands.Set_Notification import SetNotification
+from Commands.Sent_Notification import SentNotification
 
+# lib imports
+import os
+from dotenv import load_dotenv
+
+from telegram.constants import ParseMode
 from telegram import (
     InlineKeyboardButton, 
     InlineKeyboardMarkup, 
     Update
 )
-
 from telegram.ext import (
     Application, 
     CallbackQueryHandler,
@@ -22,18 +23,16 @@ from telegram.ext import (
     filters
 )
 
-from telegram.constants import (
-    ParseMode
-)
 
-db = DB()
 load_dotenv()
+set_notification_class = SetNotification()
+sent_notification_class = SentNotification()
 
-#define states and bot token
-MENU, ASK_NAME, ASK_NOTIFICATION, ASK_DATE, ASK_RATE = range(5)
+# define states
+MENU_HANDLER, ASK_NAME, ASK_NOTIFICATION, DATE_BUTTON_HANDLER, SET_MY_DATE, ASK_TIME = range(6)
 BOT_TOKEN = os.getenv('BOT_TOKEN')
 
-# start function
+
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     tg_id = update.effective_user.id
     context.user_data["tg_id"] = tg_id
@@ -48,9 +47,10 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     reply_markup = InlineKeyboardMarkup(keyboard)
 
     await update.message.reply_text("Please choose the command:", reply_markup=reply_markup, parse_mode=ParseMode.MARKDOWN)
-    return MENU
+    return MENU_HANDLER
 
-# Menu function
+
+
 async def menu(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     query = update.callback_query
     await query.answer()
@@ -67,61 +67,16 @@ async def menu(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
         reply_markup = InlineKeyboardMarkup(keyboard)
 
         await query.message.reply_text("Please choose the command:", reply_markup=reply_markup, parse_mode=ParseMode.MARKDOWN)
-        return MENU
+        return MENU_HANDLER
 
 
-# "Set Notification" function
-async def ask_name(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
-    name = update.message.text
-    context.user_data["name"] = name
 
-    await update.message.reply_text("Enter your notification")
-    return ASK_NOTIFICATION
-
-async def ask_notification(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
-    notification = update.message.text
-    context.user_data["text"] = notification
-
-    await update.message.reply_text("Enter your date in the type --> yyyy-MM-dd")
-    return ASK_DATE
-
-async def ask_date(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
-    date_str = update.message.text
-    date_obj = date.fromisoformat(date_str)
-    context.user_data["date"] = date_obj
-
-    temp = db.checkTGId(str(context.user_data["tg_id"]))
-
-    if temp is not None:
-        db.insert_notification(temp, context.user_data["text"], context.user_data["date"])
-
-    else:
-        userId = db.insert_user(context.user_data["tg_id"], context.user_data["name"])
-        db.insert_notification(userId, context.user_data["text"], context.user_data["date"])
-
-    # return to menu
-    keyboard = [
-        [InlineKeyboardButton("Set Notification", callback_data="Set Notification")],
-    ]
-    reply_markup = InlineKeyboardMarkup(keyboard)
-
-    await update.message.reply_text("Please choose the command:", reply_markup=reply_markup, parse_mode=ParseMode.MARKDOWN)
-    return MENU
-
-
-#    return ConversationHandler.END
-
-#    await update.message.reply_text("Enter your rate of sending your notification")
-#    return ASK_RATE
-
-#async def ask_rate(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
-#    rate = update.message.text
-#    context.user_data["rate"] = rate
-#    return ConversationHandler.END
-
-async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
-    await update.message.reply_text("Operation cancelled.")
+# clean for fallbacks
+async def end(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+    await update.message.reply_text("Operation ended.")
     return ConversationHandler.END
+
+
 
 # Main function
 def main() -> None:
@@ -130,21 +85,26 @@ def main() -> None:
     conv_handler = ConversationHandler(
         entry_points=[CommandHandler("start", start)],
         states={
-            # setup "Menu" function
-            MENU: [CallbackQueryHandler(menu)],
+            # "Menu" as Query Handler
+            MENU_HANDLER: [CallbackQueryHandler(menu)],
 
-            # setup "Set Notification" function
-            ASK_NAME: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_name)],
-            ASK_NOTIFICATION: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_notification)],
-            ASK_DATE: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_date)],
-            #ASK_RATE: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_rate)],
+            # "Set Notification" functions
+            ASK_NAME: [MessageHandler(filters.TEXT & ~filters.COMMAND, set_notification_class.ask_name)],
+            ASK_NOTIFICATION: [MessageHandler(filters.TEXT & ~filters.COMMAND, set_notification_class.ask_notification)],
+
+            DATE_BUTTON_HANDLER: [CallbackQueryHandler(set_notification_class.date_button_handler)],
+
+            SET_MY_DATE: [MessageHandler(filters.TEXT & ~filters.COMMAND, set_notification_class.set_my_date)],
         },
-        fallbacks=[CommandHandler("cancel", cancel)],
+        fallbacks=[CommandHandler("end", end)],
     )
 
     # Start The Bot
     application.add_handler(conv_handler)
+    application.job_queue.run_repeating(sent_notification_class.sent_notification, interval=5, first=5)
     application.run_polling()
+
+
 
 if __name__ == "__main__":
     main()
