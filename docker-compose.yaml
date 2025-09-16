@@ -1,12 +1,12 @@
 services:
   beckend:
     image: Notification_Telegram_Bot
-    
+
     environment:
       POSTGRES_PASSWORD: ${DATABASE_PASS}
       POSTGRES_USER: ${DATABASE_USER}
       POSTGRES_DB: ${DATABASE_NAME}
-      BOT_TOKEN: "8081959742:AAFQ_uW0ZkV00RmxS03w6cDS3dffvxK7S_I"
+      BOT_TOKEN: ${BOT_TOKEN}
 
     build:
       context: .
