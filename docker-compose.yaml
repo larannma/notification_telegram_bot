@@ -1,0 +1,35 @@
+services:
+  beckend:
+    image: Notification_Telegram_Bot
+    
+    environment:
+      POSTGRES_PASSWORD: ${DATABASE_PASS}
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_DB: ${DATABASE_NAME}
+      BOT_TOKEN: "8081959742:AAFQ_uW0ZkV00RmxS03w6cDS3dffvxK7S_I"
+
+    build:
+      context: .
+    
+    depends_on:
+      db:
+        condition: service_healthy
+  db:
+    image: postgres:16.9
+
+    environment:
+      POSTGRES_PASSWORD: ${DATABASE_PASS}
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_DB: ${DATABASE_NAME}
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+    volumes:
+      db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
