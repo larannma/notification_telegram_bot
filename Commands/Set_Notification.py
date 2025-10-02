@@ -1,6 +1,6 @@
 # poject imports
 from PostgresDataBase.Connection import DataBase
-from Helper.Date_Formating import DateFormating
+from CustomLibs.Date_Formating import DateFormating
 
 # lib imports
 import datetime
@@ -150,7 +150,7 @@ class SetNotification:
         # Choose my date function
         if query.data == "Choose my date":
             await query.message.reply_text(
-                "Enter date when to sent your notification: dd MM yyyy"
+                "Enter date when to sent your notification: dd MM yyyy hh mm"
             )
             return SET_MY_DATE
 

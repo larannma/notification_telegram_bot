@@ -1,5 +1,5 @@
 # poject imports
-import Helper.Constants as Constants
+import CustomLibs.Constants as Constants
 from Commands.Set_Notification import SetNotification
 from Commands.Sent_Notification import SentNotification
 

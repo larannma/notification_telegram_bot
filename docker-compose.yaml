@@ -1,13 +1,13 @@
 services:
   beckend:
-    image: Notification_Telegram_Bot
+    image: notification_telegram_bot
     build:
       context: .
     depends_on:
       db:
         condition: service_healthy
   db:
-    image: postgres:16.9
+    image: postgres
 
     environment:
       POSTGRES_PASSWORD: ${DATABASE_PASS}
@@ -25,9 +25,9 @@ services:
       - db_data:/var/lib/postgresql/data
       
       # 2. MANDATORY: Mount the SQL blueprint into the initialization directory
-      # This ensures 'ini_db.sql' is executed on the first run.
-      # The path './PostgresDataBase/ini_db.sql' should be relative to this docker-compose.yml file.
-      - ./PostgresDataBase/ini_db.sql:/docker-entrypoint-initdb.d/ini_db.sql
+      # This ensures 'init_db.sql' is executed on the first run.
+      # The path './PostgresDataBase/init_db.sql' should be relative to this docker-compose.yml file.
+      - ./PostgresDataBase/init_db.sql:/docker-entrypoint-initdb.d/init_db.sql
 
 volumes:
   db_data:
