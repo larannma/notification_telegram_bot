@@ -5,9 +5,6 @@ CREATE TABLE "users" (
 	PRIMARY KEY("id")
 );
 
-
-
-
 CREATE TABLE "notifications" (
 	"id" SERIAL NOT NULL UNIQUE,
 	"user_id" INTEGER,
@@ -16,8 +13,6 @@ CREATE TABLE "notifications" (
 	"sent" BOOLEAN,
 	PRIMARY KEY("id")
 );
-
-
 
 ALTER TABLE "notifications"
 ADD FOREIGN KEY("user_id") REFERENCES "users"("id")
