@@ -9,7 +9,7 @@ CREATE TABLE "notifications" (
 	"id" SERIAL NOT NULL UNIQUE,
 	"user_id" INTEGER,
 	"text" TEXT,
-	"date" TIMESTAMP,
+	"date" TIMESTAMPTZ,
 	"sent" BOOLEAN,
 	PRIMARY KEY("id")
 );

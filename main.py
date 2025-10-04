@@ -1,7 +1,7 @@
 # poject imports
 import CustomLibs.Constants as Constants
 from Commands.Set_Notification import SetNotification
-from Commands.Sent_Notification import SentNotification
+from Commands.Send_Notification import SendNotification
 
 # lib imports
 import os
@@ -22,7 +22,7 @@ from telegram.ext import (
 
 load_dotenv()
 set_notification_class = SetNotification()
-sent_notification_class = SentNotification()
+send_notification_class = SendNotification()
 
 # define states
 (
@@ -130,7 +130,7 @@ def main() -> None:
     # Start The Bot
     application.add_handler(conv_handler)
     application.job_queue.run_repeating(
-        sent_notification_class.sent_notification, interval=5, first=5
+        send_notification_class.send_notification, interval=5, first=5
     )
     application.run_polling()
 

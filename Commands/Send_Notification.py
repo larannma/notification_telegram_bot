@@ -15,9 +15,11 @@ bot = Bot(token=BOT_TOKEN)
 
 
 # "Sent Notification" function
-class SentNotification:
-    async def sent_notification(self, temp):
+class SendNotification:
+    async def send_notification(self, temp):
+        print("a")
         messages = database_class.get_messages()
+        print("b", messages)
         if len(messages) == 0:
             return
 

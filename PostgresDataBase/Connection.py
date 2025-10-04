@@ -43,7 +43,7 @@ class DataBase:
         query = """
             SELECT id, user_id, text, date, sent
             FROM notifications
-            WHERE date <= NOW() AND sent = FALSE
+            WHERE sent = FALSE
         """
         self.cur.execute(query)
         rows = self.cur.fetchall()
