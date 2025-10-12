@@ -1,0 +1,33 @@
+services:
+  beckend:
+    image: notification_telegram_bot
+    build:
+      context: .
+    depends_on:
+      db:
+        condition: service_healthy
+  db:
+    image: postgres
+
+    environment:
+      POSTGRES_PASSWORD: ${DATABASE_PASS}
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_DB: ${DATABASE_NAME}
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+    volumes:
+      # 1. Persistent storage for database data
+      - db_data:/var/lib/postgresql/data
+      
+      # 2. MANDATORY: Mount the SQL blueprint into the initialization directory
+      # This ensures 'init_db.sql' is executed on the first run.
+      # The path './PostgresDataBase/init_db.sql' should be relative to this docker-compose.yml file.
+      - ./PostgresDataBase/init_db.sql:/docker-entrypoint-initdb.d/init_db.sql
+
+volumes:
+  db_data:

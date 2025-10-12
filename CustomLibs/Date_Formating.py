@@ -11,6 +11,7 @@ class DateFormating:
         self.days30 = [4, 6, 9, 11]
 
     def date_formting(self, days):
+        # Get current local time
         datetime_now = datetime.datetime.now()
         str_datetime = datetime_now.strftime("%Y-%m-%d-%H-%M")
         datetime_list = str_datetime.split("-")
@@ -24,13 +25,12 @@ class DateFormating:
                 int(int_datetime_list[2]),
                 int(int_datetime_list[3]),
                 int(int_datetime_list[4]),
-                0
+                0,
             )
-            formatted_date = datetime.datetime.fromtimestamp(FinalDate.timestamp()).strftime('%Y-%m-%d %H:%M:%S')
-            return formatted_date
+            # Return naive datetime object (local time)
+            return FinalDate
 
         except:
-
             if int_datetime_list[1] in self.days31:
                 temp = int_datetime_list[2] - 31
                 FinalDate = datetime.datetime(
@@ -39,10 +39,9 @@ class DateFormating:
                     temp,
                     int(int_datetime_list[3]),
                     int(int_datetime_list[4]),
-                    0
+                    0,
                 )
-                formatted_date = datetime.datetime.fromtimestamp(FinalDate.timestamp()).strftime('%Y-%m-%d %H:%M:%S')
-                return formatted_date
+                return FinalDate
 
             elif int_datetime_list[1] in self.days30:
                 temp = int_datetime_list[2] - 30
@@ -52,10 +51,9 @@ class DateFormating:
                     temp,
                     int(int_datetime_list[3]),
                     int(int_datetime_list[4]),
-                    0
+                    0,
                 )
-                formatted_date = datetime.datetime.fromtimestamp(FinalDate.timestamp()).strftime('%Y-%m-%d %H:%M:%S')
-                return formatted_date
+                return FinalDate
 
             elif int_datetime_list[1] == 2:
                 temp = int_datetime_list[2] - 28
@@ -65,7 +63,6 @@ class DateFormating:
                     temp,
                     int(int_datetime_list[3]),
                     int(int_datetime_list[4]),
-                    0
+                    0,
                 )
-                formatted_date = datetime.datetime.fromtimestamp(FinalDate.timestamp()).strftime('%Y-%m-%d %H:%M:%S')
-                return formatted_date
+                return FinalDate
