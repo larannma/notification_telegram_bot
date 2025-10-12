@@ -40,13 +40,36 @@ class DataBase:
         self.conn.commit()
 
     def get_messages(self):
-        query = """
+        # Get all unsent messages first
+        query_all = """
             SELECT id, user_id, text, date, sent
             FROM notifications
-            WHERE sent = FALSE AND date <= NOW()
+            WHERE sent = FALSE
         """
-        self.cur.execute(query)
-        rows = self.cur.fetchall()
+        self.cur.execute(query_all)
+        all_rows = self.cur.fetchall()
+        
+        # Debug: print all unsent messages
+        print(f"All unsent messages: {len(all_rows)}")
+        for row in all_rows:
+            print(f"Message {row[0]}: date={row[3]}, sent={row[4]}")
+        
+        # Filter by time in Python to avoid timezone issues
+        import datetime
+        now = datetime.datetime.now()
+        due_messages = []
+        
+        for row in all_rows:
+            message_date = row[3]
+            # Convert to naive datetime if it's timezone-aware
+            if hasattr(message_date, 'replace'):
+                message_date = message_date.replace(tzinfo=None)
+            
+            print(f"Comparing: {message_date} <= {now} = {message_date <= now}")
+            if message_date <= now:
+                due_messages.append(row)
+        
+        print(f"Due messages: {len(due_messages)}")
         return [
             {
                 "id": row[0],
@@ -55,7 +78,7 @@ class DataBase:
                 "date": row[3],
                 "sent": row[4],
             }
-            for row in rows
+            for row in due_messages
         ]
 
     def get_user(self, id):
