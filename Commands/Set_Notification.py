@@ -4,6 +4,7 @@ from CustomLibs.Date_Formating import DateFormating
 
 # lib imports
 import datetime
+import pytz
 
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.ext import (
@@ -183,12 +184,10 @@ class SetNotification:
             int(dateList[3]),
             int(dateList[4]),
             0,
+            tzinfo=pytz.UTC
         )
 
-        formatted_date = datetime.datetime.fromtimestamp(
-            FinalDate.timestamp()
-        ).strftime("%Y-%m-%d %H:%M:%S")
-        context.user_data["date"] = formatted_date
+        context.user_data["date"] = FinalDate
         temp = database_class.check_tg_id(str(context.user_data["tg_id"]))
 
         if temp is not None:

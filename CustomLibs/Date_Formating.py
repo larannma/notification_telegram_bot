@@ -1,4 +1,5 @@
 import datetime
+import pytz
 
 # 2 - 28 days
 # 1, 3, 5, 7, 8, 10, 12 - 31 days
@@ -11,7 +12,8 @@ class DateFormating:
         self.days30 = [4, 6, 9, 11]
 
     def date_formting(self, days):
-        datetime_now = datetime.datetime.now()
+        # Get current time with timezone awareness
+        datetime_now = datetime.datetime.now(pytz.UTC)
         str_datetime = datetime_now.strftime("%Y-%m-%d-%H-%M")
         datetime_list = str_datetime.split("-")
         int_datetime_list = [int(i) for i in datetime_list]
@@ -25,11 +27,10 @@ class DateFormating:
                 int(int_datetime_list[3]),
                 int(int_datetime_list[4]),
                 0,
+                tzinfo=pytz.UTC
             )
-            formatted_date = datetime.datetime.fromtimestamp(
-                FinalDate.timestamp()
-            ).strftime("%Y-%m-%d %H:%M:%S")
-            return formatted_date
+            # Return timezone-aware datetime object directly
+            return FinalDate
 
         except:
             if int_datetime_list[1] in self.days31:
@@ -41,11 +42,9 @@ class DateFormating:
                     int(int_datetime_list[3]),
                     int(int_datetime_list[4]),
                     0,
+                    tzinfo=pytz.UTC
                 )
-                formatted_date = datetime.datetime.fromtimestamp(
-                    FinalDate.timestamp()
-                ).strftime("%Y-%m-%d %H:%M:%S")
-                return formatted_date
+                return FinalDate
 
             elif int_datetime_list[1] in self.days30:
                 temp = int_datetime_list[2] - 30
@@ -56,11 +55,9 @@ class DateFormating:
                     int(int_datetime_list[3]),
                     int(int_datetime_list[4]),
                     0,
+                    tzinfo=pytz.UTC
                 )
-                formatted_date = datetime.datetime.fromtimestamp(
-                    FinalDate.timestamp()
-                ).strftime("%Y-%m-%d %H:%M:%S")
-                return formatted_date
+                return FinalDate
 
             elif int_datetime_list[1] == 2:
                 temp = int_datetime_list[2] - 28
@@ -71,8 +68,6 @@ class DateFormating:
                     int(int_datetime_list[3]),
                     int(int_datetime_list[4]),
                     0,
+                    tzinfo=pytz.UTC
                 )
-                formatted_date = datetime.datetime.fromtimestamp(
-                    FinalDate.timestamp()
-                ).strftime("%Y-%m-%d %H:%M:%S")
-                return formatted_date
+                return FinalDate
