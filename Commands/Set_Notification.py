@@ -4,7 +4,6 @@ from CustomLibs.Date_Formating import DateFormating
 
 # lib imports
 import datetime
-import pytz
 
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.ext import (
@@ -184,7 +183,6 @@ class SetNotification:
             int(dateList[3]),
             int(dateList[4]),
             0,
-            tzinfo=pytz.UTC
         )
 
         context.user_data["date"] = FinalDate

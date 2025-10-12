@@ -1,5 +1,4 @@
 import datetime
-import pytz
 
 # 2 - 28 days
 # 1, 3, 5, 7, 8, 10, 12 - 31 days
@@ -12,8 +11,8 @@ class DateFormating:
         self.days30 = [4, 6, 9, 11]
 
     def date_formting(self, days):
-        # Get current time with timezone awareness
-        datetime_now = datetime.datetime.now(pytz.UTC)
+        # Get current local time
+        datetime_now = datetime.datetime.now()
         str_datetime = datetime_now.strftime("%Y-%m-%d-%H-%M")
         datetime_list = str_datetime.split("-")
         int_datetime_list = [int(i) for i in datetime_list]
@@ -27,9 +26,8 @@ class DateFormating:
                 int(int_datetime_list[3]),
                 int(int_datetime_list[4]),
                 0,
-                tzinfo=pytz.UTC
             )
-            # Return timezone-aware datetime object directly
+            # Return naive datetime object (local time)
             return FinalDate
 
         except:
@@ -42,7 +40,6 @@ class DateFormating:
                     int(int_datetime_list[3]),
                     int(int_datetime_list[4]),
                     0,
-                    tzinfo=pytz.UTC
                 )
                 return FinalDate
 
@@ -55,7 +52,6 @@ class DateFormating:
                     int(int_datetime_list[3]),
                     int(int_datetime_list[4]),
                     0,
-                    tzinfo=pytz.UTC
                 )
                 return FinalDate
 
@@ -68,6 +64,5 @@ class DateFormating:
                     int(int_datetime_list[3]),
                     int(int_datetime_list[4]),
                     0,
-                    tzinfo=pytz.UTC
                 )
                 return FinalDate
